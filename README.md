@@ -1,34 +1,21 @@
-# Landing Page OpenSource
+# Landing Page Collection
 
-Đây là trang landing page opensource đa dự án, bao gồm các mẫu landing page được xây dựng với các công nghệ web hiện đại.
+A modern collection of landing pages built with popular web technologies.
 
-## 📁 Các Dự án
+## 📁 Projects
 
-- **`landing-page-react/`** - Landing page du lịch với React
-- **`real estate/`** - Landing page bất động sản với TypeScript + Vite
+- **`Nexus_LandingPage/`** - Nexus Landing Page (React + Vite + Tailwind CSS)
+- **`Plan_Landingpage/`** - Travel Landing Page (React)
+- **`real estate/`** - Real Estate Landing Page (React + TypeScript + Vite + Tailwind CSS)
 
-## 🚀 Cài đặt
+## 🤝 Contributing
 
-```bash
-# Landing page React
-cd landing-page-react
-npm install
-npm start
+We welcome all contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-# Real Estate landing page
-cd "real estate"
-npm install
-npm run dev
-```
+## 👤 Author
 
-## 🤝 Đóng góp
-
-Chúng tôi hoan nghênh mọi đóng góp! Vui lòng đọc [CONTRIBUTING.md](CONTRIBUTING.md) để biết cách đóng góp.
+**Quyen Nguyen Duc**
 
 ## 📄 License
 
-Dự án này được phân phối dưới [MIT License](LICENSE).
-
----
-
-⭐ Nếu project này hữu ích, hãy cho chúng tôi một star trên GitHub!
+This project is distributed under the [MIT License](LICENSE).
