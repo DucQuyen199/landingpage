@@ -1,4 +1,4 @@
-# Feat Landing Page
+# Nexus Landing Page
 
 A modern, responsive landing page built with React and Tailwind CSS, featuring beautiful animations and real images from Unsplash.
 
