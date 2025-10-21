@@ -45,11 +45,11 @@ export default function Features() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Features Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -63,19 +63,19 @@ export default function Features() {
                 variants={itemVariants}
                 className="group"
               >
-                <div className="h-full p-6 text-center border border-gray-100 rounded-lg hover:border-primary/20 hover:shadow-sm transition-all duration-300">
+                <div className="h-full p-4 sm:p-6 text-center border border-gray-100 rounded-lg hover:border-orange-200 hover:shadow-sm transition-all duration-300">
                   {/* Icon Container */}
-                  <div className="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:bg-primary/5 transition-all duration-300 mx-auto">
-                    <Icon size={24} className="text-gray-700 group-hover:text-primary transition-colors" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gray-50 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-orange-50 transition-all duration-300 mx-auto">
+                    <Icon size={20} className="sm:w-6 sm:h-6 text-gray-700 group-hover:text-orange-600 transition-colors" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
                     {feature.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

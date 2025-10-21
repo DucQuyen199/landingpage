@@ -122,7 +122,7 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Vợt cầu lông Section - Flashop Style */}
         <motion.div
@@ -131,12 +131,12 @@ export default function ProductGrid() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-4">
-              <div className="w-1 h-8 bg-orange-600"></div>
-              <h2 className="text-3xl font-bold text-slate-900">Vợt cầu lông</h2>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-1 h-6 sm:h-8 bg-orange-600"></div>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">Vợt cầu lông</h2>
             </div>
-            <button className="px-6 py-2 border-2 border-orange-600 text-orange-600 font-bold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300">
+            <button className="px-4 sm:px-6 py-2 border-2 border-orange-600 text-orange-600 font-bold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300 text-sm sm:text-base w-full sm:w-auto">
               Xem thêm
             </button>
           </div>
@@ -149,55 +149,55 @@ export default function ProductGrid() {
               viewport={{ once: true }}
               className="lg:row-span-2 group cursor-pointer"
             >
-              <div className="relative rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300 h-full border border-gray-100 group-hover:border-orange-300 flex flex-col">
-                <div className="flex items-center justify-center bg-white py-10 flex-1">
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300 h-full border border-gray-100 group-hover:border-orange-300 flex flex-col">
+                <div className="flex items-center justify-center bg-white py-6 sm:py-8 lg:py-10 flex-1">
                   <img
                     src={productCategories[0].products[0].image}
                     alt={productCategories[0].products[0].name}
-                    className="w-full h-96 object-contain group-hover:scale-110 transition-transform duration-300 px-4"
+                    className="w-full h-48 sm:h-64 lg:h-96 object-contain group-hover:scale-110 transition-transform duration-300 px-2 sm:px-4"
                     onError={(e) => e.target.src = 'https://shopvnb.com//uploads/gallery/vot-cau-long-lining-halbertec-motor-pro-chinh-hang_1759353102.webp'}
                   />
                 </div>
                 {productCategories[0].products[0].badge && (
-                  <div className="absolute top-3 right-3 bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">
+                  <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-orange-600 text-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-bold z-10">
                     {productCategories[0].products[0].badge}
                   </div>
                 )}
                 
-                <div className="p-5 bg-white border-t border-gray-100">
-                  <p className="text-base font-semibold text-slate-900 line-clamp-2 mb-3 min-h-12 leading-6">
+                <div className="p-3 sm:p-4 lg:p-5 bg-white border-t border-gray-100">
+                  <p className="text-sm sm:text-base font-semibold text-slate-900 line-clamp-2 mb-2 sm:mb-3 min-h-10 sm:min-h-12 leading-5 sm:leading-6">
                     {productCategories[0].products[0].name}
                   </p>
                   
                   {/* Rating */}
-                  <div className="flex items-center gap-1 mb-3">
+                  <div className="flex items-center gap-1 mb-2 sm:mb-3">
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          size={16}
-                          className="fill-yellow-400 text-yellow-400"
+                          size={14}
+                          className="sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400"
                         />
                       ))}
                     </div>
-                    <span className="text-sm text-gray-600 ml-1">({productCategories[0].products[0].reviews})</span>
+                    <span className="text-xs sm:text-sm text-gray-600 ml-1">({productCategories[0].products[0].reviews})</span>
                   </div>
                   
                   {/* Price */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-xl font-bold text-orange-600">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                    <span className="text-lg sm:text-xl font-bold text-orange-600">
                       {productCategories[0].products[0].price.toLocaleString('vi-VN')}₫
                     </span>
                     {productCategories[0].products[0].originalPrice && (
-                      <span className="text-sm line-through text-gray-400">
+                      <span className="text-xs sm:text-sm line-through text-gray-400">
                         {productCategories[0].products[0].originalPrice.toLocaleString('vi-VN')}₫
                       </span>
                     )}
                   </div>
 
                   {/* Add to Cart Button */}
-                  <button className="w-full bg-orange-600 text-white py-3 rounded-lg font-bold hover:bg-orange-700 transition-colors duration-300 flex items-center justify-center gap-2">
-                    <ShoppingCart size={18} />
+                  <button className="w-full bg-orange-600 text-white py-2 sm:py-3 rounded-lg font-bold hover:bg-orange-700 transition-colors duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <ShoppingCart size={16} className="sm:w-5 sm:h-5" />
                     Thêm vào giỏ
                   </button>
                 </div>
@@ -206,7 +206,7 @@ export default function ProductGrid() {
 
             {/* Product Grid - Right Side (6 products in 2 rows x 3 columns) */}
             <motion.div
-              className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4"
+              className="lg:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -226,26 +226,26 @@ export default function ProductGrid() {
                       onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1599652614694-99b5e82a9f4e?w=300&h=300&fit=crop'}
                     />
                     {product.badge && (
-                      <div className="absolute top-2 right-2 bg-orange-600 text-white px-2 py-1 rounded-full text-xs font-bold">
+                      <div className="absolute top-1 sm:top-2 right-1 sm:right-2 bg-orange-600 text-white px-1 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-bold">
                         {product.badge}
                       </div>
                     )}
-                    <button className="absolute bottom-2 right-2 bg-orange-600 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ShoppingCart size={16} />
+                    <button className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 bg-orange-600 text-white p-1 sm:p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ShoppingCart size={12} className="sm:w-4 sm:h-4" />
                     </button>
                   </div>
                   
                   {/* Product Info */}
-                  <p className="text-xs font-semibold text-slate-900 line-clamp-2 mb-2 h-8 leading-4">{product.name}</p>
+                  <p className="text-xs font-semibold text-slate-900 line-clamp-2 mb-1 sm:mb-2 h-6 sm:h-8 leading-3 sm:leading-4">{product.name}</p>
                   
                   {/* Rating */}
-                  <div className="flex items-center gap-1 mb-2">
+                  <div className="flex items-center gap-1 mb-1 sm:mb-2">
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          size={12}
-                          className="fill-yellow-400 text-yellow-400"
+                          size={10}
+                          className="sm:w-3 sm:h-3 fill-yellow-400 text-yellow-400"
                         />
                       ))}
                     </div>
@@ -253,8 +253,8 @@ export default function ProductGrid() {
                   </div>
                   
                   {/* Price */}
-                  <div className="flex flex-col gap-1">
-                    <span className="text-sm font-bold text-orange-600">{product.price.toLocaleString('vi-VN')}₫</span>
+                  <div className="flex flex-col gap-0.5 sm:gap-1">
+                    <span className="text-xs sm:text-sm font-bold text-orange-600">{product.price.toLocaleString('vi-VN')}₫</span>
                     {product.originalPrice && (
                       <span className="text-xs line-through text-gray-400">{product.originalPrice.toLocaleString('vi-VN')}₫</span>
                     )}
@@ -278,12 +278,12 @@ export default function ProductGrid() {
               viewport={{ once: true }}
               className="mb-24"
             >
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-1 h-8 bg-orange-600"></div>
-                  <h2 className="text-3xl font-bold text-slate-900">{category.title}</h2>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-1 h-6 sm:h-8 bg-orange-600"></div>
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900">{category.title}</h2>
                 </div>
-                <button className="px-6 py-2 border-2 border-orange-600 text-orange-600 font-bold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300">
+                <button className="px-4 sm:px-6 py-2 border-2 border-orange-600 text-orange-600 font-bold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300 text-sm sm:text-base w-full sm:w-auto">
                   Xem thêm
                 </button>
               </div>
@@ -352,7 +352,7 @@ export default function ProductGrid() {
 
                 {/* Product Grid - 6 products */}
                 <motion.div
-                  className={`${isFeaturedRight ? 'lg:col-span-3' : 'lg:col-span-3'} grid grid-cols-2 md:grid-cols-3 gap-4`}
+                  className={`${isFeaturedRight ? 'lg:col-span-3' : 'lg:col-span-3'} grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4`}
                   variants={containerVariants}
                   initial="hidden"
                   whileInView="visible"

@@ -18,7 +18,7 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 1. **Fork** the repository on GitHub
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/landingpage.git
+   git clone https://github.com/ducquyen199/landingpage.git
    cd landingpage
    ```
 3. **Add** the original repository as upstream:

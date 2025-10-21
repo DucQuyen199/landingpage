@@ -41,7 +41,7 @@ export default function Navbar() {
             <img 
               src="/logo.png" 
               alt="SmashPro Logo" 
-              className="h-18 w-auto group-hover:scale-105 transition-transform duration-300"
+              className="h-12 sm:h-16 lg:h-18 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </a>
 
@@ -85,16 +85,16 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button & Hamburger */}
-          <div className="flex items-center space-x-4">
-            <button className="btn-primary hidden sm:flex items-center space-x-2">
-              <ShoppingCart size={20} />
-              <span>Mua ngay</span>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <button className="btn-primary hidden sm:flex items-center space-x-2 text-sm lg:text-base">
+              <ShoppingCart size={18} className="sm:w-5 sm:h-5" />
+              <span className="hidden lg:inline">Mua ngay</span>
             </button>
 
             {/* Hamburger Menu */}
             <button
               onClick={toggleMenu}
-              className="md:hidden text-secondary hover:text-primary transition-colors"
+              className="md:hidden text-gray-600 hover:text-orange-600 transition-colors p-2"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -103,48 +103,52 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 mt-4 pt-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block py-3 text-gray-600 hover:text-primary font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            
-            {/* Mobile Products Menu */}
-            <div className="py-3">
-              <button 
-                onClick={() => setIsProductMenuOpen(!isProductMenuOpen)}
-                className="w-full text-left text-gray-600 hover:text-primary font-medium transition-colors flex items-center justify-between"
-              >
-                <span>Sản phẩm</span>
-                <ChevronDown size={16} className={`transition-transform ${isProductMenuOpen ? 'rotate-180' : ''}`} />
-              </button>
+          <div className="md:hidden bg-white border-t border-gray-200 mt-4 pt-4 pb-4">
+            <div className="space-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block py-3 px-4 text-gray-600 hover:text-orange-600 hover:bg-orange-50 font-medium transition-colors rounded-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
               
-              {isProductMenuOpen && (
-                <div className="mt-2 pl-4 space-y-2">
-                  {productCategories.map((category) => (
-                    <a
-                      key={category.name}
-                      href={category.href}
-                      className="block py-2 text-gray-500 hover:text-primary transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {category.name}
-                    </a>
-                  ))}
-                </div>
-              )}
+              {/* Mobile Products Menu */}
+              <div className="px-4">
+                <button 
+                  onClick={() => setIsProductMenuOpen(!isProductMenuOpen)}
+                  className="w-full text-left text-gray-600 hover:text-orange-600 font-medium transition-colors flex items-center justify-between py-3 hover:bg-orange-50 rounded-lg px-2"
+                >
+                  <span>Sản phẩm</span>
+                  <ChevronDown size={16} className={`transition-transform ${isProductMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isProductMenuOpen && (
+                  <div className="mt-2 space-y-1">
+                    {productCategories.map((category) => (
+                      <a
+                        key={category.name}
+                        href={category.href}
+                        className="block py-2 px-6 text-gray-500 hover:text-orange-600 hover:bg-orange-50 transition-colors rounded-lg"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {category.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
             
-            <button className="btn-primary w-full mt-4 flex items-center justify-center space-x-2">
-              <ShoppingCart size={20} />
-              <span>Mua ngay</span>
-            </button>
+            <div className="px-4 mt-4">
+              <button className="btn-primary w-full flex items-center justify-center space-x-2 text-sm">
+                <ShoppingCart size={18} />
+                <span>Mua ngay</span>
+              </button>
+            </div>
           </div>
         )}
       </div>
