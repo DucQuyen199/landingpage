@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AIPEX - AI-Driven Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    /* Page fade-in animation (on initial load) */
+    @keyframes page-fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-enter {
+      opacity: 0;
+      animation: page-fade-in 0.8s ease-out forwards;
+    }
+
+    /* Text reveal (mask-up) */
+    @keyframes text-reveal-up {
+      0% {
+        opacity: 0;
+        transform: translateY(40%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .text-reveal {
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .text-reveal span {
+      display: inline-block;
+      transform: translateY(40%);
+      opacity: 0;
+      animation: text-reveal-up 0.9s ease-out forwards;
+    }
+
+    .text-reveal-delay-1 span {
+      animation-delay: 0.15s;
+    }
+
+    .text-reveal-delay-2 span {
+      animation-delay: 0.3s;
+    }
+
+    .text-reveal-delay-3 span {
+      animation-delay: 0.45s;
+    }
+
+    /* Section & item scroll reveal */
+    @keyframes section-fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-reveal,
+    .item-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+
+    .section-reveal.is-visible {
+      animation: section-fade-up 0.8s ease-out forwards;
+    }
+
+    .item-reveal.is-visible {
+      animation: section-fade-up 0.6s ease-out forwards;
+    }
+  </style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "msi-red": "#FF0000",
+            "msi-black": "#000000",
+            "msi-grey": "#888888",
+            "msi-light-grey": "#F4F4F4",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const revealEls = document.querySelectorAll('.section-reveal, .item-reveal');
+      if (!('IntersectionObserver' in window) || revealEls.length === 0) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.18,
+      });
+
+      revealEls.forEach((el) => observer.observe(el));
+    });
+  </script>
+</head>
+<body class="font-display bg-white text-black">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden page-enter">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1600px] flex-1 px-4">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur border-b border-[#E5E5E5] font-display relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-[3px] bg-msi-red"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-[3px] bg-msi-red"></div>
+  <div class="mx-auto flex h-[88px] max-w-[1600px] items-center justify-between px-5 md:px-10">
+    <div class="flex items-center gap-8">
+      <a href="#" class="flex items-center">
+        <img src="https://storage-asset.msi.com/frontend/imgs/logo.png" alt="MSI" class="h-9 md:h-11 w-auto"/>
+      </a>
+      <div class="hidden lg:flex flex-col leading-tight">
+        <span class="text-[13px] font-semibold tracking-[0.18em] text-msi-grey uppercase">AI-DRIVEN PERFORMANCE</span>
+        <span class="text-sm text-[#333333]">Gaming · Creator · Business &amp; Productivity</span>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-7 text-[14px] font-semibold">
+      <a href="#" class="text-[#555555] hover:text-black transition-colors">Sản phẩm</a>
+      <a href="#" class="text-[#555555] hover:text-black transition-colors">Giải pháp AIoT</a>
+      <a href="#" class="text-[#555555] hover:text-black transition-colors">Business</a>
+      <a href="#" class="text-[#555555] hover:text-black transition-colors">Có gì mới</a>
+      <a href="#" class="text-[#555555] hover:text-black transition-colors">Cộng đồng</a>
+      <a href="#" class="text-[#555555] hover:text-black transition-colors">Hỗ trợ</a>
+    </nav>
+
+    <div class="flex items-center gap-4 text-[#666666]">
+      <button class="hidden md:inline-flex items-center justify-center rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-[#444444] hover:border-black hover:text-black transition-colors" aria-label="Tài khoản">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300; font-size: 18px;">person</span>
+      </button>
+      <button class="hidden md:inline-flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-[#444444] hover:border-black hover:text-black transition-colors">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300; font-size: 18px;">location_on</span>
+        <span>Vietnam</span>
+      </button>
+      <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 hover:border-black hover:text-black transition-colors">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300; font-size: 20px;">search</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main class="flex flex-col w-full">
+<!-- Hero Section -->
+<section class="w-full bg-black text-white overflow-hidden section-reveal">
+<div class="flex flex-col md:flex-row w-full max-w-[1600px] mx-auto relative">
+<button class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-2 hover:bg-black/80 text-white">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</button>
+<div class="flex-1 p-12 flex flex-col justify-center items-start gap-6 relative z-10">
+<h2 class="text-4xl md:text-5xl font-bold leading-tight text-reveal"><span>Raid Ready</span></h2>
+    <p class="text-xl text-gray-300 text-reveal text-reveal-delay-1"><span>Get <span class="italic">ARC Raiders</span> with select<br>GeForce RTX 50 Series.*</span></p>
+<div class="flex gap-4 mt-4">
+<img src="https://storage-asset.msi.com/global/picture/banner/banner_1758779948df044aeebea8c17e9bc47cc3845cfc67.jpeg" alt="Laptop" class="h-48 object-contain"/>
+</div>
+<div class="flex gap-4 items-center mt-4">
+<span class="text-xs text-gray-400">*Terms and conditions apply</span>
+<div class="bg-[#76B900] text-black px-2 py-1 font-bold text-xs">GEFORCE RTX</div>
+</div>
+</div>
+<div class="flex-1 relative min-h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=60");'>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-10 right-10 text-right">
+<h1 class="text-6xl font-black uppercase italic tracking-tighter text-white drop-shadow-lg text-reveal text-reveal-delay-2"><span>ARC<br>Raiders</span></h1>
+</div>
+</div>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-2 hover:bg-black/80 text-white">
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</section>
+
+<!-- Discover Innovations -->
+<section class="py-16 px-0 md:px-0 w-full section-reveal">
+<h2 class="text-3xl font-bold text-center mb-12 text-black text-reveal text-reveal-delay-1"><span>Discover the Latest MSI Innovations</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group cursor-pointer item-reveal">
+<div class="overflow-hidden">
+<img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&auto=format&fit=crop&q=60" alt="Titan 18 HX" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="bg-[#F4F4F4] p-6 text-center">
+<h3 class="text-lg font-bold mb-2">Titan 18 HX Dragon Edition Norse Myth</h3>
+<p class="text-sm text-gray-500">Dragonforged Dominance</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer item-reveal">
+<div class="overflow-hidden">
+<img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&auto=format&fit=crop&q=60" alt="RTX 50 Series" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="bg-[#F4F4F4] p-6 text-center">
+<h3 class="text-lg font-bold mb-2">GeForce RTX™ 50 GAMING Series</h3>
+<p class="text-sm text-gray-500">Unleashing the Future of AI</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer item-reveal">
+<div class="overflow-hidden">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEKAmrGgF8HFhMBOn8qI4WDq_trUor-b8zBA&s" alt="RTX 40 Series" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="bg-[#F4F4F4] p-6 text-center">
+<h3 class="text-lg font-bold mb-2">GeForce RTX™ 40 GAMING Series</h3>
+<p class="text-sm text-gray-500">Play Hard Stay Silent</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Titan Banner -->
+<section class="w-full relative h-[500px] bg-black overflow-hidden section-reveal">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600&auto=format&fit=crop&q=80"); opacity: 0.7;'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="relative z-10 h-full flex flex-col justify-end items-center pb-16 text-center">
+<h2 class="text-5xl md:text-7xl font-serif text-white tracking-widest mb-4 drop-shadow-lg text-reveal" style="font-family: 'Times New Roman', serif;"><span>TITAN 18 HX</span></h2>
+  <p class="text-xl md:text-2xl text-gray-300 font-serif italic text-reveal text-reveal-delay-1"><span>DRAGON EDITION NORSE MYTH</span></p>
+</div>
+</section>
+
+<!-- AIoT Solutions -->
+<section class="py-16 w-full bg-white section-reveal">
+  <div class="w-full max-w-[1920px] mx-auto px-0 md:px-0">
+<h2 class="text-3xl font-bold text-center mb-12 text-black text-reveal text-reveal-delay-1"><span>Trao quyền cho doanh nghiệp của bạn với các giải pháp AIoT</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-10">
+<!-- Item 1 -->
+<div class="flex flex-col gap-2 group cursor-pointer item-reveal">
+<div class="overflow-hidden w-full aspect-[3/4]">
+<img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&auto=format&fit=crop&q=60" alt="EV Charger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="mt-2">
+<h3 class="text-base font-bold text-black">Giải pháp sạc EV</h3>
+<p class="text-xs text-gray-500 mt-1">Sạc thông minh cho doanh nghiệp và gia đình</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-2 group cursor-pointer item-reveal">
+<div class="overflow-hidden w-full aspect-[3/4]">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop&q=60" alt="FUTORO" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="mt-2">
+<h3 class="text-base font-bold text-black">Giải pháp FUTORO</h3>
+<p class="text-xs text-gray-500 mt-1">Dẫn đầu toàn cầu về thông tin giải trí và viễn thông trên...</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-2 group cursor-pointer item-reveal">
+<div class="overflow-hidden w-full aspect-[3/4]">
+<img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&auto=format&fit=crop&q=60" alt="AMR" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="mt-2">
+<h3 class="text-base font-bold text-black">Robot di động tự động (AMR)</h3>
+<p class="text-xs text-gray-500 mt-1">AI, Tự động hóa và Robotics</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col gap-2 group cursor-pointer item-reveal">
+<div class="overflow-hidden w-full aspect-[3/4]">
+<img src="https://storage-asset.msi.com/global/picture/banner/banner_1684217104b7e57c446c942844c0075aead13facda.jpeg" alt="Rugged Tablet" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="mt-2">
+<h3 class="text-base font-bold text-black">Rugged Tablet</h3>
+<p class="text-xs text-gray-500 mt-1">Dịch vụ thiết kế và sản xuất chuyên nghiệp</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex flex-col gap-2 group cursor-pointer item-reveal">
+<div class="overflow-hidden w-full aspect-[3/4]">
+<img src="https://storage-asset.msi.com/global/picture/banner/banner_16850030960c44c26f2a8b028eace9836ce2142a17.jpeg" alt="AIoT" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="mt-2">
+<h3 class="text-base font-bold text-black">AIoT & Giải pháp Công nghiệp</h3>
+<p class="text-xs text-gray-500 mt-1">Cung cấp bo mạch & hệ thống nhúng với sự hỗ trợ lâu...</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="flex flex-col gap-2 group cursor-pointer item-reveal">
+<div class="overflow-hidden w-full aspect-[3/4]">
+<img src="https://storage-asset.msi.com/global/picture/banner/banner_16843736253c9175014c3ed7e8ff81d10ccad0918b.jpeg" alt="Automotive" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+</div>
+<div class="mt-2">
+<h3 class="text-base font-bold text-black">Automotive và thương mại</h3>
+<p class="text-xs text-gray-500 mt-1">Đối tác ODM tốt nhất của bạn về Giải pháp AIoT</p>
+</div>
+</div>
+</div>
+</div>
+ </section>
+
+ <!-- Zigzag Featured Stories -->
+   <div class="w-full max-w-[1920px] mx-auto px-0 md:px-0 flex flex-col gap-20 section-reveal">
+     <h2 class="text-3xl font-bold text-center mb-8 text-black text-reveal text-reveal-delay-1"><span>MSI Smart Experiences</span></h2>
+
+     <!-- Row 1 -->
+     <div class="flex flex-col md:flex-row items-stretch gap-10">
+       <div class="w-full md:[flex-basis:65%] overflow-hidden">
+         <img src="https://storage-asset.msi.com/global/picture/news/2023/dt/ai-desktop-20231128-1.jpg" alt="AI Gaming Setup" class="w-full h-[260px] md:h-[420px] object-cover transition-transform duration-500 hover:scale-105"/>
+       </div>
+       <div class="w-full md:[flex-basis:35%] space-y-4 pr-4 md:pr-12">
+         <h3 class="text-2xl md:text-3xl font-bold text-black text-reveal"><span>AI-Enhanced Gaming Power</span></h3>
+         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+           Dòng sản phẩm gaming của MSI kết hợp sức mạnh GPU GeForce RTX, CPU hiệu năng cao và hệ thống tản nhiệt độc quyền,
+           mang lại tốc độ khung hình ổn định ngay cả trong những tựa game AAA nặng nhất. Các công nghệ AI như DLSS giúp tăng FPS
+           trong khi vẫn giữ được chất lượng hình ảnh sắc nét.
+         </p>
+         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+           Bàn phím, màn hình tần số quét cao và âm thanh sống động được tinh chỉnh để bạn có lợi thế trong mọi pha giao tranh,
+           từ eSports cho tới trải nghiệm single-player cinematic.</p>
+         <p class="text-xs md:text-sm text-gray-500">Giải pháp tối ưu cho game thủ muốn vừa hiệu năng cao vừa giữ hệ thống mát mẻ và yên tĩnh.</p>
+       </div>
+     </div>
+
+     <!-- Row 2 -->
+     <div class="flex flex-col md:flex-row-reverse items-stretch gap-10">
+       <div class="w-full md:[flex-basis:65%] overflow-hidden">
+         <img src="https://storage-tinhte.vncdn.vn/data/attachment-files/vnetwork/2024/06/8357367_a45a65748cbf4d472805dcd04d354cc7.jpg" alt="Creator Studio" class="w-full h-[260px] md:h-[420px] object-cover transition-transform duration-500 hover:scale-105"/>
+       </div>
+       <div class="w-full md:[flex-basis:35%] space-y-4 pl-4 md:pl-12">
+         <h3 class="text-2xl md:text-3xl font-bold text-black text-reveal text-reveal-delay-1"><span>Studio cho nhà sáng tạo nội dung</span></h3>
+         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+           Các giải pháp dành cho creator của MSI được thiết kế xoay quanh độ chính xác màu sắc và hiệu suất xử lý.
+           Màn hình đạt chuẩn màu, hỗ trợ dải màu rộng cùng phần cứng mạnh mẽ giúp quá trình dựng phim 4K, chỉnh sửa hình ảnh,
+           và thiết kế đồ họa trở nên liền mạch hơn.
+         </p>
+         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+           Phần mềm tối ưu sẵn giúp phân bổ tài nguyên thông minh cho các ứng dụng sáng tạo phổ biến như Adobe, DaVinci,
+           cho phép bạn tập trung vào ý tưởng thay vì cấu hình máy.</p>
+         <p class="text-xs md:text-sm text-gray-500">Phù hợp cho streamer, designer, videographer và mọi nhà sáng tạo nội dung chuyên nghiệp.</p>
+       </div>
+     </div>
+
+     <!-- Row 3 -->
+     <div class="flex flex-col md:flex-row items-stretch gap-10">
+       <div class="w-full md:[flex-basis:65%] overflow-hidden">
+         <img src="https://i.imgur.com/hSfsOIF.jpeg" alt="Smart Office" class="w-full h-[260px] md:h-[420px] object-cover transition-transform duration-500 hover:scale-105"/>
+       </div>
+       <div class="w-full md:[flex-basis:35%] space-y-4 pr-4 md:pr-12">
+         <h3 class="text-2xl md:text-3xl font-bold text-black text-reveal text-reveal-delay-2"><span>Giải pháp văn phòng thông minh</span></h3>
+         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+           Doanh nghiệp hiện đại cần một hạ tầng IT vừa linh hoạt vừa dễ quản lý. Hệ sinh thái văn phòng thông minh của MSI
+           kết hợp máy trạm, mini PC, màn hình và thiết bị ngoại vi giúp triển khai nhanh không gian làm việc cho nhiều nhóm khác nhau.
+         </p>
+         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+           Các giải pháp kết nối và bảo mật tích hợp sẵn hỗ trợ hội họp trực tuyến, làm việc từ xa, chia sẻ tài nguyên
+           và phân tích dữ liệu theo thời gian thực mà vẫn đảm bảo an toàn thông tin.</p>
+         <p class="text-xs md:text-sm text-gray-500">Lý tưởng cho văn phòng hybrid, phòng họp thông minh và môi trường làm việc đa thiết bị.</p>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- Future of Smart -->
+ <section class="py-16 px-4 md:px-10 max-w-[1400px] mx-auto bg-[#FAFAFA] section-reveal">
+<h2 class="text-3xl font-bold text-center mb-12 text-black text-reveal text-reveal-delay-1"><span>The Future of Smart</span></h2>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16">
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">ev_station</span>
+<span class="text-xs font-bold">EV Charger</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">dns</span>
+<span class="text-xs font-bold">Server</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">directions_car</span>
+<span class="text-xs font-bold">Automotive & Commercial</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">tv</span>
+<span class="text-xs font-bold">FUNTORO</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">smart_toy</span>
+<span class="text-xs font-bold">Autonomous Mobile Robot</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">factory</span>
+<span class="text-xs font-bold">AIoT & Industrial</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-32 text-center">
+<span class="material-symbols-outlined text-5xl text-gray-700">tablet_android</span>
+<span class="text-xs font-bold">Rugged Tablet</span>
+</div>
+</div>
+</section>
+
+<!-- Support Icons -->
+<section class="py-16 px-4 md:px-10 max-w-[1000px] mx-auto section-reveal">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center gap-4 text-center cursor-pointer hover:text-red-600 transition-colors item-reveal">
+<span class="material-symbols-outlined text-4xl">app_registration</span>
+<span class="text-sm font-medium">Đăng kí sản phẩm</span>
+</div>
+<div class="flex flex-col items-center gap-4 text-center cursor-pointer hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-4xl">headset_mic</span>
+<span class="text-sm font-medium">Hỗ trợ</span>
+</div>
+<div class="flex flex-col items-center gap-4 text-center cursor-pointer hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-4xl">play_circle</span>
+<span class="text-sm font-medium">Video</span>
+</div>
+<div class="flex flex-col items-center gap-4 text-center cursor-pointer hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-4xl">forum</span>
+<span class="text-sm font-medium">Diễn đàn MSI</span>
+</div>
+</div>
+</section>
+
+<!-- Bottom Banners -->
+<section class="grid md:grid-cols-2 gap-0 section-reveal">
+<div class="relative h-64 bg-gray-200 overflow-hidden group cursor-pointer item-reveal">
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=60" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Rewards"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-8">
+<h3 class="text-white text-xl font-bold">Chương trình tích điểm thưởng MSI</h3>
+<p class="text-gray-300 text-sm mt-1">Start Earning Point And Get Cool Stuff!</p>
+</div>
+</div>
+<div class="relative h-64 bg-gray-300 overflow-hidden group cursor-pointer item-reveal">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=60" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Insider"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-8">
+<h3 class="text-white text-xl font-bold">MSI Insider</h3>
+<p class="text-gray-300 text-sm mt-1">Wednesdays at 8AM PST / 16:00 CET</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#F4F4F4] pt-16 pb-8 text-sm text-gray-600">
+<div class="max-w-[1400px] mx-auto px-4 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-black uppercase">CỘNG ĐỒNG</h3>
+<a href="#" class="hover:underline">Tin tức từ MSI</a>
+<a href="#" class="hover:underline">Blog</a>
+<a href="#" class="hover:underline">Video</a>
+<a href="#" class="hover:underline">Mạng xã hội</a>
+<a href="#" class="hover:underline">Diễn đàn</a>
+<a href="#" class="hover:underline">Đội game</a>
+<a href="#" class="hover:underline">Chia sẻ từ khách hàng</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-black uppercase">HỖ TRỢ</h3>
+<a href="#" class="hover:underline">Tải xuống</a>
+<a href="#" class="hover:underline">Trung tâm thành viên</a>
+<a href="#" class="hover:underline">Chăm sóc khách hàng trực tuyến</a>
+<a href="#" class="hover:underline">Địa chỉ trung tâm bảo hành</a>
+<a href="#" class="hover:underline">Bảo hành</a>
+<a href="#" class="hover:underline">Hỗ trợ từ xa</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-black uppercase">TIN TỨC</h3>
+<a href="#" class="hover:underline">Báo chí</a>
+<a href="#" class="hover:underline">Giải thưởng</a>
+<a href="#" class="hover:underline">Videos</a>
+<a href="#" class="hover:underline">RSS</a>
+<a href="#" class="hover:underline">Lời chia sẻ</a>
+<a href="#" class="hover:underline">Blogs</a>
+<a href="#" class="hover:underline">Tin tức</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-black uppercase">VỀ MSI</h3>
+<a href="#" class="hover:underline">Về MSI</a>
+<a href="#" class="hover:underline">Tầm nhìn và Sứ mệnh</a>
+<a href="#" class="hover:underline">Câu chuyện Thương hiệu</a>
+<a href="#" class="hover:underline">Thông tin cho nhà đầu tư</a>
+<a href="#" class="hover:underline">Không ngừng sáng tạo</a>
+<a href="#" class="hover:underline">Chứng nhận</a>
+<a href="#" class="hover:underline">CSR</a>
+<a href="#" class="hover:underline">Tiêu chuẩn về chất lượng</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-black uppercase">TRUYỀN THÔNG</h3>
+<a href="#" class="hover:underline">Cẩm nang Sản phẩm</a>
+<a href="#" class="hover:underline">Hình nền</a>
+<a href="#" class="hover:underline">Ứng dụng của MSI</a>
+<a href="#" class="hover:underline">Tính công suất PSU</a>
+</div>
+</div>
+<div class="flex justify-end mb-4">
+<div class="flex items-center gap-2 text-gray-500 cursor-pointer hover:text-black">
+<span class="material-symbols-outlined text-lg">public</span>
+<span>Vietnam / Tiếng Việt</span>
+</div>
+</div>
+<div class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+<p>Bản &copy; 2025 Micro-Star Int'l Co.,Ltd. All rights reserved. Chúng tôi khuyên dùng trình duyệt IE8 trở lên</p>
+<div class="flex gap-6">
+<a href="#" class="hover:underline">Cookie Policy</a>
+<a href="#" class="hover:underline">Chính sách bảo vệ thông tin</a>
+<a href="#" class="hover:underline">Điều khoản sử dụng</a>
+<a href="#" class="hover:underline">Liên hệ</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
