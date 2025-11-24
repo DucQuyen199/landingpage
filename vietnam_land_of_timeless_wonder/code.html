@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Vietnam: A Symphony of Timeless Beauty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+
+      /* Slider Styles */
+      .slider-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0;
+      }
+      .slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slide {
+        min-width: 100%;
+        height: 500px;
+        position: relative;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slider-prev { left: 20px; }
+      .slider-next { right: 20px; }
+      .slider-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(255,255,255,0.5);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dot.active {
+        background: white;
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#04ae70",
+              "background-light": "#f5f8f7",
+              "background-dark": "#0f231c",
+            },
+            fontFamily: {
+              "display": ["Be Vietnam Pro", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111815] dark:text-background-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/10">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-12 text-white">
+    <div class="hidden md:flex justify-between text-[10px] tracking-[0.4em] uppercase text-white/60 py-2 border-b border-white/10">
+      <p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span>Vietnam · GMT+7</p>
+      <p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">cloud</span>26° Clear Skies</p>
+      <p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">call</span>Concierge +84 33 202 9410</p>
+    </div>
+    <div class="flex items-center gap-6 py-4" data-aos="fade-down" data-aos-delay="150">
+      <div class="flex items-center gap-3">
+        <div class="size-12 border border-white/30 flex items-center justify-center p-1">
+          <img src="https://upload.wikimedia.org/wikipedia/vi/1/1a/Vietnam_Timeless_Charm.PNG" alt="Vietnam Timeless Charm logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.5em] text-white/60">Discover</p>
+          <h1 class="text-xl font-semibold tracking-[0.2em]">Vietnam Atlas</h1>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-6 mx-auto text-[11px] uppercase tracking-[0.45em]">
+        <a class="hover:text-primary transition-colors" href="#overview">Overview</a>
+        <a class="hover:text-primary transition-colors" href="#culture">Culture</a>
+        <a class="hover:text-primary transition-colors" href="#cuisine">Cuisine</a>
+        <a class="hover:text-primary transition-colors" href="#destinations">Routes</a>
+        <a class="hover:text-primary transition-colors" href="#gallery">Gallery</a>
+      </nav>
+
+      <div class="ml-auto flex items-center gap-3">
+        <button class="hidden md:flex h-11 min-w-[150px] items-center justify-center gap-2 px-5 border border-white/30 text-[11px] uppercase tracking-[0.3em]">
+          <span class="material-symbols-outlined text-base">map</span>
+          Live Map
+        </button>
+        <button class="h-11 min-w-[150px] px-5 bg-primary text-black font-semibold uppercase tracking-[0.4em] text-[11px] flex items-center justify-center">Book</button>
+        <button class="lg:hidden size-10 flex items-center justify-center border border-white/30">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+<section class="relative w-full min-h-[90vh] text-white mt-[50px]">
+<div class="absolute inset-0">
+  <div class="w-full h-full bg-cover bg-center" data-alt="A stunning aerial view of Ha Long Bay in Vietnam, with its iconic limestone karsts and emerald waters at sunset." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdLctwAHxlM3BP9C5WwBdx1RNJ5i43JScNVPa2KMJwJWRK7GyqtGvnHhAxjzkReTR6VuYwEs1Mx2c8pnlVSlDDbvPOGsB-w8XWdS_RNnVTaPS6bDkCulI0tUZvC4SsivaU1YUEiVhmAlU5cqgm2sbUq17vD21JxbDz4pP23Wx8nuT70kz7IRsAOltiwUsC2gkCzF0KNIF0qdbDJnQhBST83qpS_v8FefeisG0XDzMMHaRBiir3J4es7pQqFPdT8fEImDFBZi6LEXU");'></div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/10"></div>
+<div class="relative z-10 px-6 md:px-12 lg:px-24 py-32">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 space-y-8" data-aos="fade-up">
+      <p class="text-sm uppercase tracking-[0.5em] text-primary/80">Sapa · Hanoi · Hue · Saigon</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-tight">Vietnam: A Symphony of Timeless Beauty</h1>
+      <p class="text-lg text-white/80 max-w-2xl">Journey through a land where ancient traditions, kinetic cities, and cinematic coastlines coexist. Let artisan villages, lantern-lit streets, and delta markets compose your own travel story.</p>
+      <div class="flex flex-wrap gap-6 text-xs md:text-sm uppercase tracking-[0.3em] text-white/70">
+        <div>
+          <p class="text-2xl font-bold text-white">54</p>
+          <p>ethnic cultures</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold text-white">3,200 km</p>
+          <p>coastline</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold text-white">8</p>
+          <p>UNESCO wonders</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <button class="px-6 py-3 bg-primary text-white font-semibold tracking-wide uppercase text-xs rounded-full">Start Planning</button>
+        <button class="px-6 py-3 border border-white/40 text-white font-semibold tracking-wide uppercase text-xs rounded-full backdrop-blur">Watch Stories</button>
+      </div>
+    </div>
+    <div class="lg:col-span-5 w-full" data-aos="fade-left" data-aos-delay="150">
+      <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm uppercase tracking-[0.3em] text-white/60">Next departure</p>
+            <p class="text-2xl font-bold">Spring Equinox Trail</p>
+          </div>
+          <span class="material-symbols-outlined text-white/70">explore</span>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div>
+            <p class="text-3xl font-bold">12</p>
+            <p class="text-xs uppercase tracking-wide text-white/70">days</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold">5</p>
+            <p class="text-xs uppercase tracking-wide text-white/70">cities</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold">24°</p>
+            <p class="text-xs uppercase tracking-wide text-white/70">avg temp</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3 border-l border-white/30 pl-4">
+            <span class="text-primary text-sm mt-1">01</span>
+            <div>
+              <p class="font-semibold">Ha Long Bay Dawn Cruise</p>
+              <p class="text-sm text-white/70">Sail between karsts with a chef-led breakfast on deck.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 border-l border-white/30 pl-4">
+            <span class="text-primary text-sm mt-1">02</span>
+            <div>
+              <p class="font-semibold">Hue Imperial After Hours</p>
+              <p class="text-sm text-white/70">Private recital inside the Citadel's royal theater.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 border-l border-white/30 pl-4">
+            <span class="text-primary text-sm mt-1">03</span>
+            <div>
+              <p class="font-semibold">Mekong Delta Night Markets</p>
+              <p class="text-sm text-white/70">Taste tropical harvests as floating vendors light up the canals.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between text-sm text-white/70">
+          <p>Curated by local travel artisans</p>
+          <button class="underline underline-offset-4">View Itinerary →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-16 flex items-center gap-2 text-white/70 text-xs uppercase tracking-[0.5em]">
+    <span class="material-symbols-outlined text-base">south</span>
+    Scroll to explore
+  </div>
+</div>
+</section>
+
+<div class="px-6 md:px-12 lg:px-24 w-full max-w-none py-10 min-h-screen">
+
+<!-- Section: Overview -->
+<div id="overview" class="py-10" data-aos="fade-up" data-aos-offset="200">
+  <div class="grid grid-cols-1 xl:grid-cols-12 gap-12 items-start">
+    <div class="xl:col-span-4 space-y-6">
+      <p class="text-sm uppercase tracking-[0.3em] text-primary">Northern Peaks · Central Heritage · Southern Pulse</p>
+      <h2 class="text-4xl font-bold leading-tight tracking-[-0.02em] text-left dark:text-white">An Invitation to Explore</h2>
+      <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">Embark on a poetic journey through the heart of Southeast Asia. Vietnam is a living tapestry where Confucian traditions intertwine with modern creativity, terraced mountains pour into deltas, and every meal tells a story of balance.</p>
+      <ul class="space-y-3 border-l-4 border-primary pl-4 text-gray-700 dark:text-gray-300">
+        <li><span class="font-semibold text-primary">54 ethnic groups</span> shaping rituals, music, and craftsmanship.</li>
+        <li><span class="font-semibold text-primary">3 climatic belts</span> delivering dramatic scenery from misty mountains to tropical seas.</li>
+        <li><span class="font-semibold text-primary">Centuries of history</span> preserved in temples, citadels, and French boulevards.</li>
+      </ul>
+    </div>
+    <div class="xl:col-span-8 space-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 border border-gray-200 dark:border-gray-700 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900" data-aos="fade-up" data-aos-delay="150">
+        <div class="p-8">
+          <span class="material-symbols-outlined text-4xl text-primary mb-4 block">temple_buddhist</span>
+          <h3 class="text-xl font-bold mb-2">Rich History</h3>
+          <p class="text-gray-600 dark:text-gray-400">4,000 years of civilization, from Đông Sơn drums to contemporary art.</p>
+        </div>
+        <div class="p-8">
+          <span class="material-symbols-outlined text-4xl text-primary mb-4 block">landscape</span>
+          <h3 class="text-xl font-bold mb-2">Natural Wonders</h3>
+          <p class="text-gray-600 dark:text-gray-400">Karst bays, highland rice terraces, sand dunes, and labyrinthine deltas.</p>
+        </div>
+        <div class="p-8">
+          <span class="material-symbols-outlined text-4xl text-primary mb-4 block">restaurant_menu</span>
+          <h3 class="text-xl font-bold mb-2">World-Class Cuisine</h3>
+          <p class="text-gray-600 dark:text-gray-400">A philosophy of balance where herbs, heat, and broths harmonize perfectly.</p>
+        </div>
+      </div>
+
+      <section class="relative overflow-hidden h-[420px] flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQdrgbL_by5JLHMcd7puAC1dZGj4hIK1d4yUkvTuN1WCDeEjxVsBcEnmRdcnzIVp_GqPGbcB4nn86_YObXb6IbDYADJq2Z5Ohs5a8BwZC7me6voefvAPsZOvG2_trdgRoVFcfVDaEMmZI3l8rufthRpAHv0gcDKKv-GKgybGsLEaffmz0oA-akCiw6rYgsdrOmT23Hsxo347xt20BqNBJ3SjvZYACrHy_5fFKSBjumFoVvypH0gSiHdgBh8YD8d6UGCAKoozBVbg4")'></div>
+        <div class="relative z-10 max-w-3xl px-6">
+          <h3 class="text-4xl font-bold">Echoes of History</h3>
+          <p class="mt-4 text-lg">From the Confucian courtyards of the Temple of Literature to French Gothic cathedrals and modernist opera houses, Vietnam preserves every era in vivid detail.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Culture -->
+<div id="culture" class="py-10 border-t border-gray-200 dark:border-gray-800" data-aos="fade-up" data-aos-offset="200">
+  <div class="grid grid-cols-1 xl:grid-cols-12 gap-12 items-start">
+    <div class="xl:col-span-4 space-y-5">
+      <p class="text-sm uppercase tracking-[0.3em] text-primary">Culture & Heritage</p>
+      <h2 class="text-4xl font-bold leading-tight tracking-[-0.02em] dark:text-white">The Soul of Vietnam</h2>
+      <p class="text-gray-700 dark:text-gray-300">Vietnamese culture celebrates harmony—between people and nature, reverence and innovation. Each region contributes distinctive textiles, musical scales, and seasonal rituals that have been refined over centuries.</p>
+      <div class="grid grid-cols-2 gap-4 text-sm text-gray-700 dark:text-gray-300">
+        <div class="border border-gray-200 dark:border-gray-700 p-4">
+          <p class="text-2xl font-bold text-primary">1,650+</p>
+          <p>Festivals per year</p>
+        </div>
+        <div class="border border-gray-200 dark:border-gray-700 p-4">
+          <p class="text-2xl font-bold text-primary">12</p>
+          <p>UNESCO cultural listings</p>
+        </div>
+      </div>
+    </div>
+    <div class="xl:col-span-8 space-y-16">
+      <!-- Ao Dai Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="overflow-hidden h-80 border border-gray-200 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="150">
+          <img src="https://duaelbluiumc3.cloudfront.net/Media/Images/InboundImages/Blog/ao-dai-from-royals-to-everyday-life-the-ao-dais-transformation.jpg" alt="Vietnamese women in Ao Dai" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-primary mb-4">Áo Dài - The Symbol of Grace</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">The Áo Dài is more than just a traditional dress; it is the embodiment of Vietnamese beauty and elegance. Consisting of a long, split tunic worn over silk trousers, it flatters every figure and is worn with pride on special occasions, holidays, and in daily life.</p>
+          <p class="text-gray-700 dark:text-gray-300">Historically evolving from royal court wear to modern fashion, the Áo Dài remains a timeless icon of Vietnamese identity.</p>
+        </div>
+      </div>
+
+      <!-- Tet Holiday Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="lg:order-2 overflow-hidden h-80 border border-gray-200 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://vietdreamtravel.vn/wp-content/uploads/2020/04/Tet-Nguyen-Dan-1.jpeg.webp" alt="Tet Holiday Decorations" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="lg:order-1">
+          <h3 class="text-2xl font-bold text-primary mb-4">Tết Nguyên Đán - Lunar New Year</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">Tết is the most important celebration in Vietnamese culture. It marks the arrival of spring and is a sacred time for family reunions. Streets are adorned with peach blossoms (North) and yellow apricot blossoms (South).</p>
+          <p class="text-gray-700 dark:text-gray-300">Families prepare traditional foods like Bánh Chưng (sticky rice cake), clean their homes to sweep away bad luck, and give lucky money (Lì Xì) to children and elders.</p>
+        </div>
+      </div>
+
+      <!-- Water Puppetry -->
+      <div class="bg-primary/5 dark:bg-primary/10 p-10 border border-primary/30 dark:border-primary/40" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-primary mb-6">Water Puppetry (Múa Rối Nước)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="col-span-2">
+            <p class="text-gray-700 dark:text-gray-300 mb-4">Originating in the villages of the Red River Delta in the 11th century, this unique art form is performed in a waist-deep pool. Puppeteers stand behind a split-bamboo screen, controlling wooden puppets with long bamboo rods hidden beneath the water.</p>
+            <p class="text-gray-700 dark:text-gray-300">The plays tell stories of rural life, national history, and folklore, accompanied by traditional music.</p>
+          </div>
+          <div class="overflow-hidden h-48 border border-gray-200 dark:border-gray-700">
+            <img src="https://hoangthanhthanglong.vn/en/wp-content/uploads/sites/2/2018/12/mua-roi-nuoc.jpg" alt="Water Puppetry" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Cuisine -->
+<div id="cuisine" class="py-10 border-t border-gray-200 dark:border-gray-800" data-aos="fade-up" data-aos-offset="200">
+  <div class="grid grid-cols-1 xl:grid-cols-12 gap-12 items-start">
+    <div class="xl:col-span-4 space-y-5">
+      <p class="text-sm uppercase tracking-[0.3em] text-primary">Culinary Landscape</p>
+      <h2 class="text-4xl font-bold leading-tight tracking-[-0.02em] text-primary">A Taste of Vietnam</h2>
+      <p class="text-gray-700 dark:text-gray-300">Vietnamese cuisine is a masterful blend of the five fundamental taste elements. Chefs balance textures and temperatures just as carefully as flavor, so every bite feels refreshing yet complex.</p>
+      <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+        <li><strong class="text-primary">Sweet</strong>: palm sugar, coconut milk, caramelized fish sauce.</li>
+        <li><strong class="text-primary">Sour</strong>: tamarind, star fruit, fermented rice.</li>
+        <li><strong class="text-primary">Herbal freshness</strong>: basil, perilla, Vietnamese coriander.</li>
+      </ul>
+    </div>
+
+  <div class="xl:col-span-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6" data-aos="fade-up" data-aos-delay="150">
+    <!-- Dish 1 -->
+    <div class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-hidden group">
+      <div class="h-48 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=1974&auto=format&fit=crop" alt="Pho" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Phở</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">The national dish. A fragrant beef or chicken noodle soup with herbs, lime, and chili. A breakfast staple that warms the soul.</p>
+      </div>
+    </div>
+    <!-- Dish 2 -->
+    <div class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-hidden group">
+      <div class="h-48 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <img src="https://banhmihanoi.net/wp-content/uploads/2019/07/maxresdefault.jpg" alt="Banh Mi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Bánh Mì</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">A product of French colonial influence and Vietnamese ingenuity. A crispy baguette filled with pate, meats, pickled veggies, and herbs.</p>
+      </div>
+    </div>
+    <!-- Dish 3 -->
+    <div class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-hidden group">
+      <div class="h-48 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <img src="https://static.vinwonders.com/production/bun-cha-ha-noi-01.jpg" alt="Bun Cha" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Bún Chả</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Grilled pork patties and slices served in a dipping sauce with vermicelli noodles and fresh herbs. Famous in Hanoi.</p>
+      </div>
+    </div>
+    <!-- Dish 4 -->
+    <div class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-hidden group">
+      <div class="h-48 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <img src="https://cdn.tgdd.vn/2020/07/CookProduct/ava-1200x676-7.jpg" alt="Coffee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Cà Phê Sữa Đá</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Vietnamese iced coffee with sweetened condensed milk. Strong, sweet, and incredibly refreshing.</p>
+      </div>
+    </div>
+    <!-- Dish 5 -->
+    <div class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-hidden group">
+      <div class="h-48 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <img src="https://cdn.tgdd.vn/2020/11/CookRecipe/Avatar/goi-cuon-bo-nuong-yakiniku-thumbnail.jpg" alt="Spring Rolls" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Gỏi Cuốn</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Fresh spring rolls packed with greens, prawns, and pork, dipped in a rich peanut hoisin sauce.</p>
+      </div>
+    </div>
+    <!-- Dish 6 -->
+    <div class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 overflow-hidden group">
+      <div class="h-48 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/C%C3%A0_ph%C3%AA_tr%E1%BB%A9ng.jpg/1200px-C%C3%A0_ph%C3%AA_tr%E1%BB%A9ng.jpg" alt="Egg Coffee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Cà Phê Trứng</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Egg coffee, a Hanoi specialty. A creamy, meringue-like egg foam perched atop strong robusta coffee.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Section: Destinations -->
+<div id="destinations" class="py-10 border-t border-gray-200 dark:border-gray-800" data-aos="fade-up" data-aos-offset="200">
+  <div class="grid grid-cols-1 xl:grid-cols-12 gap-12">
+    <div class="xl:col-span-3 space-y-6">
+      <p class="text-sm uppercase tracking-[0.3em] text-primary">Routes & Regions</p>
+      <h2 class="text-4xl font-bold leading-tight tracking-[-0.02em] dark:text-white">Destinations at a Glance</h2>
+      <p class="text-gray-700 dark:text-gray-300">Move north to south and witness climates, dialects, and trades change in real time. Each region below can anchor an itinerary or be woven together for a grand journey.</p>
+      <ol class="space-y-3 text-gray-700 dark:text-gray-300 list-decimal list-inside">
+        <li>North: limestone bays, highland communities, millennia-old capitals.</li>
+        <li>Center: imperial legacies, trading towns, and dramatic coastlines.</li>
+        <li>South: economic hubs, floating markets, and fertile river systems.</li>
+      </ol>
+    </div>
+    <div class="xl:col-span-9 space-y-16">
+      <article class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 border border-gray-200 dark:border-gray-800 p-8" data-aos="fade-right">
+        <div class="lg:col-span-3 space-y-6">
+          <div>
+            <p class="text-sm uppercase tracking-[0.4em] text-primary">Northern Arc</p>
+            <h3 class="mt-2 text-3xl font-bold leading-tight dark:text-white">Where Mountains Kiss the Clouds</h3>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Explore the rugged beauty of the northern highlands, home to terraced rice fields that cascade down mountainsides and vibrant ethnic cultures. Discover the thousand-year-old capital, Hanoi, a city of lakes, shaded boulevards, and a rich artistic heritage.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-lg dark:text-white">Sapa</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Trekking through emerald rice terraces and meeting local hill tribes.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg dark:text-white">Ha Long Bay</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Cruising through thousands of limestone islands topped with rainforests.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2 overflow-hidden h-96 border border-gray-200 dark:border-gray-700">
+          <img alt="Terraced rice fields in Mu Cang Chai, Northern Vietnam, with golden hues during harvest season." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwtU3krntOmhEM0EwZ34sGKtDthlP3P_olh8FzmSKYM2XXY7n94n480fvjo5now2iN7eg9aW4lKJgO5udeHPz5IO-kL6reMzp1U9a_yaas4Zgdwg7JCTQEmrAGs4kghR0auWDbOYBaPNlyJorhqN-yPcHbd6BNUf8FbuqthMZ2LZW613l4DIvOQTkfh6vHancpgEKUKLcIG6JPbejW2BGg0gLDXek6TZRuEg_dLUJ-K91EtsBf9zV89phAad33Pnh_MJZZj7-TFvE"/>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 border border-gray-200 dark:border-gray-800 p-8" data-aos="fade-left" data-aos-delay="100">
+        <div class="lg:col-span-2 overflow-hidden h-96 lg:order-first border border-gray-200 dark:border-gray-700">
+          <img alt="Colorful lanterns illuminating the ancient town of Hoi An at night, reflecting on the river." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtRxZPW3euNBzfFIMDuy1wYx6sSsDgd8T3YlmVhS-A6lc8bL3za2ElZLe1PFOrEX6EMdWa59Vewy_0UNvZXYn84kP-RSBDcw1I7FZqKwkn-e3haFeQJwoi0BvK1KZ7ZfJfSo7Ylk4sNAt8A5nHih3tWCQxudm0pIzPTtukS20oci3lCbOQJRaY-eGzLkO66bx--f8UErJDQ0VXdWeuD0hh7w_I0Du80SpTN1KEDtxSLU_E3G78krZhDJclJDy3hDsRaVBI0B1KYE8"/>
+        </div>
+        <div class="lg:col-span-3 space-y-6">
+          <div>
+            <p class="text-sm uppercase tracking-[0.4em] text-primary">Central Heritage</p>
+            <h3 class="mt-2 text-3xl font-bold leading-tight dark:text-white">Echoes of Imperial Dynasties</h3>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Journey back in time in Central Vietnam, the cradle of the country's last royal dynasty. Discover the poetic beauty of Hue's Imperial City, the lantern-lit charm of Hoi An's ancient town, and the dramatic coastline that has witnessed centuries of history.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-lg dark:text-white">Hoi An</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">A well-preserved ancient trading port with colorful lanterns and tailor shops.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg dark:text-white">Hue</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">The former imperial capital, famous for its citadel, tombs, and pagodas.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 border border-gray-200 dark:border-gray-800 p-8" data-aos="fade-right" data-aos-delay="150">
+        <div class="lg:col-span-3 space-y-6">
+          <div>
+            <p class="text-sm uppercase tracking-[0.4em] text-primary">Southern Tapestry</p>
+            <h3 class="mt-2 text-3xl font-bold leading-tight dark:text-white">A Tapestry of River Life</h3>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300">Dive into the energetic pulse of Southern Vietnam. From the cosmopolitan dynamism of Ho Chi Minh City to the lush, serpentine waterways of the Mekong Delta, the south is a vibrant tapestry of commerce, culture, and incredible natural fertility.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-lg dark:text-white">Ho Chi Minh City</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">A high-octane city of commerce and culture that drives the country forward.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg dark:text-white">Mekong Delta</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">A water world where boats, houses, and markets float upon the innumerable rivers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2 overflow-hidden h-96 border border-gray-200 dark:border-gray-700">
+          <img alt="A woman in a traditional conical hat rows a boat through a narrow canal in the Mekong Delta." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAilyHpTJ_JWOAAp6vrGxC3HgUlH0CfHukDdmVD5CnoVMj6j970BzPndRXTozlIkHFNp0W5RjNVmYlHl0r_jpnte6uiosrq4CZhnldHQU8q3W8I5tlIoByy-RePIAxMhfunt8TjECTC3406HgFJMIUhJJ-aAQE3sh5xOOhFdIOvw_kuOstBsvBynQjPvEl_9KSUV_N1Kvp75IwVps72MmEEikejLNUl2Lrcmt6oFzPyPqEmziKm64P9TXXOLQUOyFJFLwN3kSUfknE"/>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Gallery (Slider) -->
+<div id="gallery" class="py-10 border-t border-gray-200 dark:border-gray-800" data-aos="fade-up" data-aos-offset="200">
+  <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Visual Journey</h2>
+  <div class="slider-container border border-gray-200 dark:border-gray-800">
+    <div class="slider-track" id="sliderTrack">
+      <!-- Slide 1 -->
+      <div class="slide">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdLctwAHxlM3BP9C5WwBdx1RNJ5i43JScNVPa2KMJwJWRK7GyqtGvnHhAxjzkReTR6VuYwEs1Mx2c8pnlVSlDDbvPOGsB-w8XWdS_RNnVTaPS6bDkCulI0tUZvC4SsivaU1YUEiVhmAlU5cqgm2sbUq17vD21JxbDz4pP23Wx8nuT70kz7IRsAOltiwUsC2gkCzF0KNIF0qdbDJnQhBST83qpS_v8FefeisG0XDzMMHaRBiir3J4es7pQqFPdT8fEImDFBZi6LEXU" alt="Ha Long Bay">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-white">
+          <h3 class="text-2xl font-bold">Ha Long Bay</h3>
+          <p>UNESCO World Heritage Site</p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwtU3krntOmhEM0EwZ34sGKtDthlP3P_olh8FzmSKYM2XXY7n94n480fvjo5now2iN7eg9aW4lKJgO5udeHPz5IO-kL6reMzp1U9a_yaas4Zgdwg7JCTQEmrAGs4kghR0auWDbOYBaPNlyJorhqN-yPcHbd6BNUf8FbuqthMZ2LZW613l4DIvOQTkfh6vHancpgEKUKLcIG6JPbejW2BGg0gLDXek6TZRuEg_dLUJ-K91EtsBf9zV89phAad33Pnh_MJZZj7-TFvE" alt="Mu Cang Chai">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-white">
+          <h3 class="text-2xl font-bold">Mu Cang Chai</h3>
+          <p>Golden Rice Terraces</p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtRxZPW3euNBzfFIMDuy1wYx6sSsDgd8T3YlmVhS-A6lc8bL3za2ElZLe1PFOrEX6EMdWa59Vewy_0UNvZXYn84kP-RSBDcw1I7FZqKwkn-e3haFeQJwoi0BvK1KZ7ZfJfSo7Ylk4sNAt8A5nHih3tWCQxudm0pIzPTtukS20oci3lCbOQJRaY-eGzLkO66bx--f8UErJDQ0VXdWeuD0hh7w_I0Du80SpTN1KEDtxSLU_E3G78krZhDJclJDy3hDsRaVBI0B1KYE8" alt="Hoi An">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-white">
+          <h3 class="text-2xl font-bold">Hoi An Ancient Town</h3>
+          <p>Lantern Festival</p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="slide">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAilyHpTJ_JWOAAp6vrGxC3HgUlH0CfHukDdmVD5CnoVMj6j970BzPndRXTozlIkHFNp0W5RjNVmYlHl0r_jpnte6uiosrq4CZhnldHQU8q3W8I5tlIoByy-RePIAxMhfunt8TjECTC3406HgFJMIUhJJ-aAQE3sh5xOOhFdIOvw_kuOstBsvBynQjPvEl_9KSUV_N1Kvp75IwVps72MmEEikejLNUl2Lrcmt6oFzPyPqEmziKm64P9TXXOLQUOyFJFLwN3kSUfknE" alt="Mekong Delta">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-white">
+          <h3 class="text-2xl font-bold">Mekong Delta</h3>
+          <p>River Life</p>
+        </div>
+      </div>
+    </div>
+    
+    <button class="slider-nav slider-prev" onclick="moveSlide(-1)">
+      <span class="material-symbols-outlined">arrow_back_ios</span>
+    </button>
+    <button class="slider-nav slider-next" onclick="moveSlide(1)">
+      <span class="material-symbols-outlined">arrow_forward_ios</span>
+    </button>
+    
+    <div class="slider-dots" id="sliderDots">
+      <!-- Dots will be generated by JS -->
+    </div>
+  </div>
+</div>
+
+</div>
+</main>
+<footer class="bg-[#0b1a14] text-white border-t border-white/10" data-aos="fade-up" data-aos-offset="200">
+  <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="size-12 border border-white/30 flex items-center justify-center p-1">
+          <img src="https://upload.wikimedia.org/wikipedia/vi/1/1a/Vietnam_Timeless_Charm.PNG" alt="Vietnam Timeless Charm logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-[0.5em] text-white/60">National Brand</p>
+          <h3 class="text-lg font-semibold tracking-[0.3em]">Timeless Charm</h3>
+        </div>
+      </div>
+      <p class="text-sm text-white/70">Vietnam invites you to slow down, breathe in misty mountains, follow lantern trails, and taste the rhythm of river markets. Every latitude is a new melody.</p>
+    </div>
+    <div>
+      <h4 class="text-sm uppercase tracking-[0.4em] text-primary mb-4">Regions To Feel</h4>
+      <ul class="space-y-3 text-sm text-white/70">
+        <li><span class="text-white">Northern Highlands:</span> Cloud-swept passes, tea hills, ethnic craft villages.</li>
+        <li><span class="text-white">Central Heritage Coast:</span> Imperial citadels, lantern-lit ports, Cham ruins.</li>
+        <li><span class="text-white">Southern River Delta:</span> Floating orchards, mangrove sanctuaries, modern Saigon.</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm uppercase tracking-[0.4em] text-primary mb-4">Travel Essentials</h4>
+      <ul class="space-y-3 text-sm text-white/70">
+        <li>Best seasons: Oct–Apr for cool north, Dec–May for dry south.</li>
+        <li>Visa updates: e-visa available for 90+ nationalities.</li>
+        <li>Connectivity: High-speed rail + regional flights link major hubs.</li>
+        <li>Responsible travel: Support community homestays and reduce plastics.</li>
+      </ul>
+    </div>
+    <div class="space-y-3 text-sm text-white/70">
+      <h4 class="text-sm uppercase tracking-[0.4em] text-primary mb-4">Connect With Vietnam</h4>
+      <p>Vietnam National Administration of Tourism<br/>80 Quán Sứ, Hoàn Kiếm, Hà Nội</p>
+      <p>Concierge: +84 33 202 9410</p>
+      <p>Email: hello@vietnam.travel</p>
+      <p class="text-white">#VietnamTimelessCharm</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 text-center text-xs uppercase tracking-[0.3em] text-white/60 py-4">
+    © 2025 Vietnam Timeless Charm · Crafted with love for explorers
+  </div>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-out-cubic',
+    offset: 120,
+  });
+
+  // Slider Functionality
+  let currentSlide = 0;
+  const track = document.getElementById('sliderTrack');
+  const slides = document.getElementsByClassName('slide');
+  const dotsContainer = document.getElementById('sliderDots');
+  
+  // Create dots
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update dots
+    const dots = document.getElementsByClassName('dot');
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove('active');
+    }
+    dots[currentSlide].classList.add('active');
+  }
+
+  function moveSlide(n) {
+    currentSlide += n;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    updateSlider();
+  }
+
+  function goToSlide(n) {
+    currentSlide = n;
+    updateSlider();
+  }
+
+  // Auto slide
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000);
+</script>
+</body></html>
