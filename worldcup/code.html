@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>World Cup 2026 Panorama</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "base-dark": "#03060f",
+              "panel-blue": "#0b1e3b",
+              "panel-red": "#2a0b0d",
+              "panel-gold": "#2f2604",
+              accent: "#feba32",
+              flame: "#ff4c60",
+              aqua: "#32d5ff",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            boxShadow: {
+              hard: "0 20px 70px rgba(0,0,0,0.45)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-display bg-[linear-gradient(180deg,#ffffff_0%,#eef2f8_65%,#dfe4ef_100%)] text-slate-900">
+    <div class="flex min-h-screen w-full flex-col">
+      <header class="w-full border-b border-slate-200 bg-white shadow-sm" data-aos="fade-down">
+        <div class="flex flex-wrap items-center justify-between gap-4 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-slate-500">
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="flex items-center gap-2 text-slate-800">
+              <span class="material-symbols-outlined text-base">stadium</span>
+              FIFA WORLD CUP 2026
+            </span>
+            <span>USA • CANADA • MEXICO</span>
+          </div>
+          <div class="flex items-center gap-4 text-slate-400">
+            <span>June – July / 2026</span>
+            <span>48 teams</span>
+            <span>16 host cities</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 px-6 py-4 text-sm font-semibold">
+          <div class="flex items-center gap-3 text-slate-900">
+            <span class="material-symbols-outlined text-xl text-accent">language</span>
+            <p>World Cup 2026 Panorama</p>
+          </div>
+          <nav class="flex flex-wrap items-center gap-5 text-slate-500">
+            <a class="hover:text-slate-900" href="#hero">Overview</a>
+            <a class="hover:text-slate-900" href="#schedule">Schedule</a>
+            <a class="hover:text-slate-900" href="#champions">Champions</a>
+            <a class="hover:text-slate-900" href="#timeline">Timeline</a>
+            <a class="hover:text-slate-900" href="#articles">Articles</a>
+            <a class="hover:text-slate-900" href="#cta">Sign up</a>
+          </nav>
+          <a class="border border-slate-900 px-6 py-2 text-xs uppercase tracking-[0.4em] text-slate-900" href="#cta">Follow updates</a>
+        </div>
+      </header>
+
+      <main class="flex flex-col gap-12 pb-16">
+        <section class="w-full px-4 py-10 sm:px-8 lg:px-16" id="hero" data-aos="fade-up" data-aos-duration="1000">
+          <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="flex flex-col gap-5" data-aos="fade-right" data-aos-delay="200">
+              <p class="text-xs uppercase tracking-[0.45em] text-slate-500" data-aos="fade-down" data-aos-delay="300">FIFA World Cup 2026</p>
+              <h1 class="text-4xl font-black leading-tight text-slate-900 sm:text-5xl" data-aos="fade-up" data-aos-delay="400">
+                Three host nations, 48 national teams, and a historic rendezvous await across the United States, Canada, and Mexico.
+              </h1>
+              <p class="text-base text-slate-600" data-aos="fade-up" data-aos-delay="500">
+                This landing page curates every breaking storyline around World Cup 2026: the match calendar, the legacy of past champions, deep-dive articles, the technology roadmap, and the global sponsorship web. The expansive layout keeps dense data readable on any screen.
+              </p>
+              <div class="grid gap-3 sm:grid-cols-3" data-aos="fade-up" data-aos-delay="600">
+                <div class="border border-slate-200 bg-slate-50 p-4" data-aos="zoom-in" data-aos-delay="700">
+                  <p class="text-xs text-slate-500">Host cities</p>
+                  <p class="text-2xl font-bold text-slate-900">16</p>
+                  <p class="text-xs text-slate-500">Across North America</p>
+                </div>
+                <div class="border border-slate-200 bg-amber-50 p-4" data-aos="zoom-in" data-aos-delay="800">
+                  <p class="text-xs text-slate-500">Matches</p>
+                  <p class="text-2xl font-bold text-flame">104</p>
+                  <p class="text-xs text-slate-500">Expanded format</p>
+                </div>
+                <div class="border border-slate-200 bg-yellow-50 p-4" data-aos="zoom-in" data-aos-delay="900">
+                  <p class="text-xs text-slate-500">Fans reached</p>
+                  <p class="text-2xl font-bold text-accent">+5B</p>
+                  <p class="text-xs text-slate-500">Global viewership forecast</p>
+                </div>
+              </div>
+              <div class="mt-2.5 flex flex-wrap items-center justify-between gap-6 rounded border border-slate-200 bg-slate-50 px-6 py-8" id="countdown" data-aos="flip-up" data-aos-delay="1000">
+                <div class="text-left" data-aos="fade-right" data-aos-delay="1100">
+                  <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Countdown</p>
+                  <p class="text-sm text-slate-600">Until kickoff on 08/06/2026</p>
+                </div>
+                <div class="flex flex-wrap justify-end gap-6 text-center sm:text-left" aria-live="polite" data-aos="fade-left" data-aos-delay="1200">
+                  <div data-aos="rotate-right" data-aos-delay="1300">
+                    <p class="text-3xl font-black text-slate-900" data-count="days">--</p>
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-slate-500">Days</p>
+                  </div>
+                  <div data-aos="rotate-right" data-aos-delay="1400">
+                    <p class="text-3xl font-black text-slate-900" data-count="hours">--</p>
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-slate-500">Hours</p>
+                  </div>
+                  <div data-aos="rotate-right" data-aos-delay="1500">
+                    <p class="text-3xl font-black text-slate-900" data-count="minutes">--</p>
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-slate-500">Minutes</p>
+                  </div>
+                  <div data-aos="rotate-right" data-aos-delay="1600">
+                    <p class="text-3xl font-black text-slate-900" data-count="seconds">--</p>
+                    <p class="text-[11px] uppercase tracking-[0.3em] text-slate-500">Seconds</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-3" data-aos="fade-left" data-aos-delay="200">
+              <div class="h-[380px] overflow-hidden border border-slate-200 bg-slate-50" data-aos="zoom-in" data-aos-delay="300">
+                <img class="h-full w-full object-cover" src="https://media.vov.vn/sites/default/files/styles/large/public/2025-11/42_doi_tuyen_gop_mat_tai_world_cup_2026.jpg" alt="World Cup grandstand" />
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="h-52 overflow-hidden border border-slate-200 bg-slate-50" data-aos="zoom-in" data-aos-delay="400">
+                  <img class="h-full w-full object-cover" src="https://kenh14cdn.com/203336854389633024/2023/10/10/photo-2-1696907348646879388929.jpg" alt="Ronalo" />
+                </div>
+                <div class="h-52 overflow-hidden border border-slate-200 bg-slate-50" data-aos="zoom-in" data-aos-delay="500">
+                  <img class="h-full w-full object-cover" src="https://i.ytimg.com/vi/2p2N1vuVatg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCcZRTTcYmcrkIjVUyKZlOyf2R3vA" alt="Argentina supporters" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full border-y border-slate-100 bg-white px-4 py-10 sm:px-8 lg:px-16" id="schedule" data-aos="fade-up" data-aos-delay="50">
+          <div class="mx-auto flex max-w-6xl flex-col gap-5">
+            <div>
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500">Projected match calendar</p>
+              <h2 class="text-3xl font-black text-slate-900">Key stopovers from group play to the final</h2>
+              <p class="mt-3 text-base text-slate-600">Details may shift once FIFA releases the official draw, but this timeline helps you prepare for a cross-border journey.</p>
+            </div>
+            <div class="grid gap-3 lg:grid-cols-4">
+              <article class="flex flex-col gap-2 border border-slate-200 bg-white p-4" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-xs text-slate-500" data-aos="fade-down">08 – 15 / 06</p>
+                <h3 class="text-xl font-semibold text-slate-900" data-aos="fade-right">Opening & Group Round 1</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">Estadio Azteca in Mexico City sets the tone. Groups A–D play their first two matches.</p>
+                <ul class="text-xs text-slate-500" data-aos="fade-up" data-aos-delay="100">
+                  <li>• Mexico vs seeded opponent</li>
+                  <li>• USA lights up Los Angeles</li>
+                </ul>
+              </article>
+              <article class="flex flex-col gap-2 border border-slate-200 bg-white p-4" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-xs text-slate-500" data-aos="fade-down">16 – 23 / 06</p>
+                <h3 class="text-xl font-semibold text-slate-900" data-aos="fade-right">Group Rounds 2 & 3</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">Toronto, Vancouver, Houston, and Atlanta rotate nightly primetime slots.</p>
+                <ul class="text-xs text-slate-500" data-aos="fade-up" data-aos-delay="100">
+                  <li>• Groups E–L wrap up</li>
+                  <li>• Field narrows toward a 32-team bracket</li>
+                </ul>
+              </article>
+              <article class="flex flex-col gap-2 border border-slate-200 bg-white p-4" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-xs text-slate-500" data-aos="fade-down">26 / 06 – 06 / 07</p>
+                <h3 class="text-xl font-semibold text-slate-900" data-aos="fade-right">Expanded knock-out</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">Rounds of 32, 16, and the quarterfinals stretch across New York, Dallas, and Seattle.</p>
+                <ul class="text-xs text-slate-500" data-aos="fade-up" data-aos-delay="100">
+                  <li>• 48 shrink to 8</li>
+                  <li>• Matches nearly every other day</li>
+                </ul>
+              </article>
+              <article class="flex flex-col gap-2 border border-slate-200 bg-white p-4" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-xs text-slate-500" data-aos="fade-down">09 – 19 / 07</p>
+                <h3 class="text-xl font-semibold text-slate-900" data-aos="fade-right">Semifinals & Final</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">SoFi Stadium (Los Angeles) and MetLife (New Jersey) anchor the climax.</p>
+                <ul class="text-xs text-slate-500" data-aos="fade-up" data-aos-delay="100">
+                  <li>• Semis: 09 & 10 / 07</li>
+                  <li>• Final: 19 / 07</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full border-y border-slate-100 bg-white px-4 py-10 text-slate-900 sm:px-8 lg:px-16" id="champions" data-aos="fade-up" data-aos-delay="100">
+          <div class="mx-auto flex max-w-6xl flex-col gap-5">
+            <div>
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500">Past champions</p>
+              <h2 class="text-3xl font-black">Legacy of World Cup winners</h2>
+              <p class="mt-3 text-base text-slate-600">Each tile highlights a federation that climbed to the summit. Scan the crown count and the golden years attached to every triumph.</p>
+            </div>
+            <div class="grid gap-3 lg:grid-cols-4">
+              <article class="border border-slate-200 bg-slate-50 p-5" data-aos="zoom-in" data-aos-delay="100">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/br.png" alt="Flag of Brazil" />
+                  <p class="text-xs text-slate-500">Brazil</p>
+                </div>
+                <p class="text-3xl font-black text-slate-900" data-aos="fade-up">5</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1958 · 1962 · 1970 · 1994 · 2002</p>
+              </article>
+              <article class="border border-slate-200 bg-amber-50 p-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/de.png" alt="Flag of Germany" />
+                  <p class="text-xs text-slate-500">Germany</p>
+                </div>
+                <p class="text-3xl font-black text-accent" data-aos="fade-up">4</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1954 · 1974 · 1990 · 2014</p>
+              </article>
+              <article class="border border-slate-200 bg-rose-50 p-5" data-aos="zoom-in" data-aos-delay="300">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/it.png" alt="Flag of Italy" />
+                  <p class="text-xs text-slate-500">Italy</p>
+                </div>
+                <p class="text-3xl font-black text-flame" data-aos="fade-up">4</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1934 · 1938 · 1982 · 2006</p>
+              </article>
+              <article class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="400">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/ar.png" alt="Flag of Argentina" />
+                  <p class="text-xs text-slate-500">Argentina</p>
+                </div>
+                <p class="text-3xl font-black text-slate-900" data-aos="fade-up">3</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1978 · 1986 · 2022</p>
+              </article>
+            </div>
+            <div class="grid gap-3 lg:grid-cols-4">
+              <article class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="500">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/uy.png" alt="Flag of Uruguay" />
+                  <p class="text-xs text-slate-500">Uruguay</p>
+                </div>
+                <p class="text-3xl font-black text-slate-900" data-aos="fade-up">2</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1930 · 1950</p>
+              </article>
+              <article class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="600">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/fr.png" alt="Flag of France" />
+                  <p class="text-xs text-slate-500">France</p>
+                </div>
+                <p class="text-3xl font-black text-flame" data-aos="fade-up">2</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1998 · 2018</p>
+              </article>
+              <article class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="700">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/gb-eng.png" alt="Flag of England" />
+                  <p class="text-xs text-slate-500">England</p>
+                </div>
+                <p class="text-3xl font-black text-accent" data-aos="fade-up">1</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">1966</p>
+              </article>
+              <article class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="800">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                  <img class="h-6 w-6 rounded-full object-cover" src="https://flagcdn.com/w40/es.png" alt="Flag of Spain" />
+                  <p class="text-xs text-slate-500">Spain</p>
+                </div>
+                <p class="text-3xl font-black text-slate-900" data-aos="fade-up">1</p>
+                <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">2010</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full border-b border-slate-100 bg-white px-4 py-10 text-slate-900 sm:px-8 lg:px-16" id="timeline" data-aos="fade-up" data-aos-delay="150">
+          <div class="mx-auto flex max-w-6xl flex-col gap-5">
+            <div>
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500">Road to 2026 timeline</p>
+              <h2 class="text-3xl font-black">Milestones weaving from 1994 to 2026</h2>
+            </div>
+            <div class="grid gap-3 lg:grid-cols-4">
+              <article class="flex flex-col gap-2 border border-slate-200 bg-slate-50 p-4" data-aos="flip-left" data-aos-delay="100">
+                <p class="text-xs text-slate-500" data-aos="fade-down">1994</p>
+                <h3 class="text-xl font-semibold" data-aos="fade-right">World Cup in the USA</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">American stadiums shattered attendance records, laying the groundwork for 2026.</p>
+                <img class="h-32 w-full object-cover" src="https://m.media-amazon.com/images/I/71MRap-Uw3L._AC_UF1000,1000_QL80_.jpg" alt="USA 1994 crowds" data-aos="zoom-in" data-aos-delay="200" />
+              </article>
+              <article class="flex flex-col gap-2 border border-slate-200 bg-rose-50 p-4" data-aos="flip-left" data-aos-delay="200">
+                <p class="text-xs text-slate-500" data-aos="fade-down">2002</p>
+                <h3 class="text-xl font-semibold" data-aos="fade-right">Asia co-hosts for the first time</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">South Korea and Japan proved a multi-host model can thrive.</p>
+                <img class="h-32 w-full object-cover" src="https://static01.nyt.com/athletic/uploads/wp/2022/12/07083611/GettyImages-1546889.jpg" alt="Asian stadium" data-aos="zoom-in" data-aos-delay="200" />
+              </article>
+              <article class="flex flex-col gap-2 border border-slate-200 bg-amber-50 p-4" data-aos="flip-left" data-aos-delay="300">
+                <p class="text-xs text-slate-500" data-aos="fade-down">2010</p>
+                <h3 class="text-xl font-semibold" data-aos="fade-right">The Jabulani era</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">South Africa sparked a wave of broadcast tech and global fan zones.</p>
+                <img class="h-32 w-full object-cover" src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2010/6/11/1276279824678/World-Cup-2010-spectators-006.jpg?width=465&dpr=1&s=none&crop=none" alt="African fans" data-aos="zoom-in" data-aos-delay="200" />
+              </article>
+              <article class="flex flex-col gap-2 border border-slate-200 bg-white p-4" data-aos="flip-left" data-aos-delay="400">
+                <p class="text-xs text-slate-500" data-aos="fade-down">2026</p>
+                <h3 class="text-xl font-semibold" data-aos="fade-right">Era of 48 teams</h3>
+                <p class="text-sm text-slate-600" data-aos="fade-up">Four-team groups and a denser knock-out path redefine the bracket.</p>
+                <img class="h-32 w-full object-cover" src="https://cdn.sanity.io/images/oyf3dba6/production/690cbeac44d6d20d807d92dd59ed56a3c5e50692-1024x512.png?w=960&fit=max&auto=format" alt="2026 countdown" data-aos="zoom-in" data-aos-delay="200" />
+              </article>
+            </div>
+            <div class="grid gap-3 lg:grid-cols-3">
+              <div class="border border-slate-200 bg-white p-5" data-aos="slide-up" data-aos-delay="500">
+                <p class="text-xs uppercase tracking-[0.3em] text-slate-500" data-aos="fade-down">Match flow</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600" data-aos="fade-up">
+                  <li>08/06: Kickoff in Mexico City</li>
+                  <li>09-25/06: 12 groups conclude</li>
+                  <li>04/07: Quarterfinals across 3 nations</li>
+                </ul>
+              </div>
+              <div class="border border-slate-200 bg-white p-5" data-aos="slide-up" data-aos-delay="600">
+                <p class="text-xs uppercase tracking-[0.3em] text-rose-500" data-aos="fade-down">Hot zones</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600" data-aos="fade-up">
+                  <li>SoFi Stadium activates a full-roof LED canvas</li>
+                  <li>Toronto builds a fan mile along Lake Ontario</li>
+                  <li>Guadalajara revives a boutique Azteca replica</li>
+                </ul>
+              </div>
+              <div class="border border-slate-200 bg-white p-5" data-aos="slide-up" data-aos-delay="700">
+                <p class="text-xs uppercase tracking-[0.3em] text-amber-500" data-aos="fade-down">Technology</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600" data-aos="fade-up">
+                  <li>SAOT second generation</li>
+                  <li>Volumetric broadcast cameras</li>
+                  <li>Fan-zone app with NFT ticketing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full border-y border-slate-100 bg-white px-4 py-10 text-slate-900 sm:px-8 lg:px-16" id="articles" data-aos="fade-up" data-aos-delay="200">
+          <div class="mx-auto flex max-w-6xl flex-col gap-8">
+            <div class="space-y-3 text-center md:text-left">
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500">Main sponsors</p>
+              <h2 class="text-3xl font-black text-slate-900">Primary Sponsors of World Cup 2026</h2>
+              <p class="text-base text-slate-600">An expanded roster of global and regional brands powers the 2026 ecosystem, spanning apparel, fintech, mobility, media, and smart-city services.</p>
+            </div>
+            <div class="space-y-8">
+              <div class="space-y-3">
+                <p class="text-[12px] uppercase tracking-[0.4em] text-slate-500" data-aos="fade-down">Global partners</p>
+                <div class="flex flex-wrap items-center justify-center gap-8 md:justify-between">
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas" data-aos="zoom-in" data-aos-delay="100" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/1200px-Coca-Cola_logo.svg.png" alt="Coca-Cola" data-aos="zoom-in" data-aos-delay="200" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1280px-Visa_Inc._logo.svg.png" alt="Visa" data-aos="zoom-in" data-aos-delay="300" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyundai_Motor_Company_logo.svg/1000px-Hyundai_Motor_Company_logo.svg.png" alt="Hyundai" data-aos="zoom-in" data-aos-delay="400" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/9b/Qatar_Airways_Logo.svg/2560px-Qatar_Airways_Logo.svg.png" alt="Qatar Airways" data-aos="zoom-in" data-aos-delay="500" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Wanda_Group_logo.svg/2560px-Wanda_Group_logo.svg.png" alt="Wanda Group" data-aos="zoom-in" data-aos-delay="600" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Vivo_logo_2019.svg/1200px-Vivo_logo_2019.svg.png" alt="Vivo" data-aos="zoom-in" data-aos-delay="700" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hisense.svg/1200px-Hisense.svg.png" alt="Hisense" data-aos="zoom-in" data-aos-delay="800" />
+                </div>
+              </div>
+              <div class="space-y-3">
+                <p class="text-[12px] uppercase tracking-[0.4em] text-slate-500" data-aos="fade-down">Regional & innovation partners</p>
+                <div class="flex flex-wrap items-center justify-center gap-8 md:justify-between">
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Banco_Azteca_Logo.png" alt="Banco Azteca" data-aos="zoom-in" data-aos-delay="100" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://logos-world.net/wp-content/uploads/2021/05/Air-Canada-Logo.png" alt="Air Canada" data-aos="zoom-in" data-aos-delay="200" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/AT%26T_logo_2016.svg/1024px-AT%26T_logo_2016.svg.png" alt="AT&T" data-aos="zoom-in" data-aos-delay="300" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" alt="Spotify" data-aos="zoom-in" data-aos-delay="400" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" data-aos="zoom-in" data-aos-delay="500" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" data-aos="zoom-in" data-aos-delay="600" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Budweiser_Anheuser-Busch_logo.svg/2560px-Budweiser_Anheuser-Busch_logo.svg.png" alt="Budweiser" data-aos="zoom-in" data-aos-delay="700" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Pepsi_logo_%282014%29.svg/2560px-Pepsi_logo_%282014%29.svg.png" alt="Pepsi" data-aos="zoom-in" data-aos-delay="800" />
+                  <img class="h-8 w-24 object-contain opacity-80 transition hover:opacity-100" src="https://su.ultrasite.com/170_a_7103_ee80b992.png" alt="Alibaba Cloud" data-aos="zoom-in" data-aos-delay="900" />
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        <section class="w-full border-y border-slate-100 bg-white px-4 py-10 text-slate-900 sm:px-8 lg:px-16" id="gallery" data-aos="fade-up" data-aos-delay="250">
+          <div class="mx-auto grid max-w-6xl gap-4">
+            <div class="flex flex-col gap-1.5">
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500">Host imagery 2026</p>
+              <h2 class="text-3xl font-black">North American visual corridor</h2>
+            </div>
+            <div class="grid gap-3 md:grid-cols-3">
+              <div class="h-72 border border-slate-200 bg-slate-50" data-aos="zoom-in" data-aos-delay="100">
+                <img class="h-full w-full object-cover" src="https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/rams/zfbgzaluvq8tf5yaoiw0" alt="Los Angeles stadium" />
+              </div>
+              <div class="h-72 border border-slate-200 bg-slate-50" data-aos="zoom-in" data-aos-delay="200">
+                <img class="h-full w-full object-cover" src="https://nowtoronto.com/wp-content/uploads/2025/11/FIFA-World-Cup-Toronto.webp" alt="Toronto skyline" />
+              </div>
+              <div class="h-72 border border-slate-200 bg-slate-50" data-aos="zoom-in" data-aos-delay="300">
+                <img class="h-full w-full object-cover" src="https://www.reuters.com/resizer/v2/UJ6OZQ6PJROQVL3CXF445R6J74.jpg?auth=776fc41019b993a5a712c7a1892d288d7fe0e1cf45f43f363b9daaa69fe866eb" alt="Mexico City aerial" />
+              </div>
+            </div>
+            <div class="grid gap-3 md:grid-cols-4">
+              <div class="h-48 border border-slate-200 bg-rose-50" data-aos="fade-up" data-aos-delay="400">
+                <img class="h-full w-full object-cover" src="https://media.cnn.com/api/v1/images/stellar/prod/01-gettyimages-2159736370.jpg?c=original" alt="Fans in the United States" />
+              </div>
+              <div class="h-48 border border-slate-200 bg-slate-50" data-aos="fade-up" data-aos-delay="500">
+                <img class="h-full w-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG3c3QlM_av4fCo_QmRmtWhGno10wOyHd_sw&s" alt="Fans in Canada" />
+              </div>
+              <div class="h-48 border border-slate-200 bg-amber-50" data-aos="fade-up" data-aos-delay="600">
+                <img class="h-full w-full object-cover" src="https://s.yimg.com/ny/api/res/1.2/91Bl7jSLxoiIlJujn6gdAA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MDtjZj13ZWJw/https://s.yimg.com/os/creatr-uploaded-images/2022-11/ebe41400-6aa3-11ed-bbdf-d1010de43e13" alt="Fans in Mexico" />
+              </div>
+              <div class="h-48 border border-slate-200 bg-white" data-aos="fade-up" data-aos-delay="700">
+                <img class="h-full w-full object-cover" src="https://vcdn1-thethao.vnecdn.net/2025/11/14/ronaldo-1763074733-2249-1763074932.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=3a_5lokz61RcIFZ5df3W-w" alt="Ronaldo" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full border-y border-slate-100 bg-white px-4 py-10 sm:px-8 lg:px-16" data-aos="fade-up" data-aos-delay="300">
+          <div class="mx-auto grid max-w-6xl gap-3 lg:grid-cols-4">
+            <div class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="100">
+              <p class="text-xs uppercase tracking-[0.4em] text-slate-500" data-aos="fade-down">Tickets sold</p>
+              <p class="text-4xl font-black text-slate-900" data-aos="fade-up">+2M</p>
+              <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">First presale window already live.</p>
+            </div>
+            <div class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="200">
+              <p class="text-xs uppercase tracking-[0.4em] text-slate-500" data-aos="fade-down">Volunteers</p>
+              <p class="text-4xl font-black text-flame" data-aos="fade-up">90,000</p>
+              <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">Registered across three nations.</p>
+            </div>
+            <div class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="300">
+              <p class="text-xs uppercase tracking-[0.4em] text-slate-500" data-aos="fade-down">Projected revenue</p>
+              <p class="text-4xl font-black text-slate-900" data-aos="fade-up">$11B</p>
+              <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">According to FIFA's 2024 outlook.</p>
+            </div>
+            <div class="border border-slate-200 bg-white p-5" data-aos="zoom-in" data-aos-delay="400">
+              <p class="text-xs uppercase tracking-[0.4em] text-slate-500" data-aos="fade-down">Digital formats</p>
+              <p class="text-4xl font-black text-slate-900" data-aos="fade-up">4 modes</p>
+              <p class="text-sm text-slate-600" data-aos="fade-up" data-aos-delay="100">Events, education, fan zones, data stories.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full border-t border-slate-100 bg-white px-4 py-10 text-slate-900 sm:px-8 lg:px-16" id="cta" data-aos="fade-up" data-aos-delay="350">
+          <div class="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
+            <article class="border border-slate-200 bg-white p-6" data-aos="fade-right" data-aos-delay="100">
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500" data-aos="fade-down">Newsletter signup</p>
+              <h2 class="mt-3 text-3xl font-black" data-aos="fade-up">Follow World Cup 2026 every day</h2>
+              <p class="mt-4 text-base text-slate-600" data-aos="fade-up" data-aos-delay="100">Leave your details to receive interactive fixtures, exclusive analysis, and fresh sponsorship intel.</p>
+              <form class="mt-5 grid gap-3 text-sm text-slate-700" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col gap-2" data-aos="slide-left" data-aos-delay="300">
+                  <label for="full-name">Full name</label>
+                  <input class="border border-slate-300 bg-white px-4 py-3" id="full-name" placeholder="e.g. Hai Nguyen" type="text" />
+                </div>
+                <div class="flex flex-col gap-2" data-aos="slide-left" data-aos-delay="400">
+                  <label for="email">Email</label>
+                  <input class="border border-slate-300 bg-white px-4 py-3" id="email" placeholder="you@example.com" type="email" />
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2" data-aos="slide-left" data-aos-delay="500">
+                  <div class="flex flex-col gap-2">
+                    <label for="city">City</label>
+                    <select class="border border-slate-300 bg-white px-4 py-3" id="city">
+                      <option>New York</option>
+                      <option>Toronto</option>
+                      <option>Mexico City</option>
+                      <option>Ho Chi Minh City</option>
+                    </select>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label for="slot">Focus area</label>
+                    <select class="border border-slate-300 bg-white px-4 py-3" id="slot">
+                      <option>Tickets & Fixtures</option>
+                      <option>Sponsorship News</option>
+                      <option>Tactical Analysis</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="border border-flame bg-flame px-6 py-3 text-base font-semibold text-white" type="button" data-aos="zoom-in" data-aos-delay="600">Submit request</button>
+              </form>
+            </article>
+            <article class="border border-slate-200 bg-slate-50 p-6" data-aos="fade-left" data-aos-delay="100">
+              <p class="text-xs uppercase tracking-[0.5em] text-slate-500" data-aos="fade-down">Community feedback</p>
+              <div class="mt-5 max-h-80 space-y-3 overflow-y-auto pr-2 scrollbar-hide" data-aos="fade-up" data-aos-delay="200">
+                <div class="border border-slate-200 bg-white p-4" data-aos="zoom-in" data-aos-delay="300">
+                  <p class="text-sm text-slate-600">"The champions directory is crystal clear; my students can find data instantly."</p>
+                  <p class="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">MSc. Ha Thanh • Sports Lecturer</p>
+                </div>
+                <div class="border border-slate-200 bg-white p-4" data-aos="zoom-in" data-aos-delay="400">
+                  <p class="text-sm text-slate-600">"The sponsorship block helped us prep a pitch deck for local partners."</p>
+                  <p class="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">Agency Norte • Creative Lead</p>
+                </div>
+                <div class="border border-slate-200 bg-white p-4" data-aos="zoom-in" data-aos-delay="500">
+                  <p class="text-sm text-slate-600">"Weekly curated articles are a massive inspiration stream."</p>
+                  <p class="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">Blogger Minh Quan • Sports Writer</p>
+                </div>
+                <div class="border border-slate-200 bg-white p-4" data-aos="zoom-in" data-aos-delay="600">
+                  <p class="text-sm text-slate-600">"The 1994-2026 timeline visualizes progress so well that I drop it straight into football history lessons."</p>
+                  <p class="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">Coach Le Manh • Football Studies</p>
+                </div>
+                <div class="border border-slate-200 bg-white p-4" data-aos="zoom-in" data-aos-delay="700">
+                  <p class="text-sm text-slate-600">"The visual corridor gallery gives our media team instant color references."</p>
+                  <p class="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">Carla Ruiz • Photo Editor</p>
+                </div>
+                <div class="border border-slate-200 bg-white p-4" data-aos="zoom-in" data-aos-delay="800">
+                  <p class="text-sm text-slate-600">"The realtime countdown keeps our club's content squad on a weekly publishing rhythm."</p>
+                  <p class="mt-2 text-xs uppercase tracking-[0.3em] text-slate-500">Ngo Duc Tri • Digital Ops</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="w-full border-t border-slate-200 bg-white px-6 py-8 text-center text-sm tracking-[0.3em] text-slate-500 md:text-base">
+        Freelance coding & assignments • Zalo/Phone: 0332029410 • Email: quyennd19@gmail.com
+      </footer>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800, easing: "ease-out-cubic", offset: 80 });
+    </script>
+    <script>
+      (function () {
+        const countdownEl = document.getElementById("countdown");
+        if (!countdownEl) return;
+        const target = new Date("2026-06-08T00:00:00-05:00").getTime();
+        const outputs = {
+          days: countdownEl.querySelector('[data-count="days"]'),
+          hours: countdownEl.querySelector('[data-count="hours"]'),
+          minutes: countdownEl.querySelector('[data-count="minutes"]'),
+          seconds: countdownEl.querySelector('[data-count="seconds"]'),
+        };
+
+        function pad(value) {
+          return value < 10 ? `0${value}` : `${value}`;
+        }
+
+        function tick() {
+          const now = Date.now();
+          let diff = Math.max(target - now, 0);
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          diff -= days * 24 * 60 * 60 * 1000;
+          const hours = Math.floor(diff / (1000 * 60 * 60));
+          diff -= hours * 60 * 60 * 1000;
+          const minutes = Math.floor(diff / (1000 * 60));
+          diff -= minutes * 60 * 1000;
+          const seconds = Math.floor(diff / 1000);
+
+          outputs.days.textContent = pad(days);
+          outputs.hours.textContent = pad(hours);
+          outputs.minutes.textContent = pad(minutes);
+          outputs.seconds.textContent = pad(seconds);
+        }
+
+        tick();
+        setInterval(tick, 1000);
+      })();
+    </script>
+  </body>
+</html>
