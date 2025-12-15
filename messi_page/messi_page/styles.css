@@ -1,0 +1,309 @@
+/* messi_page/styles.css */
+
+/* Custom CSS Variables */
+:root {
+    --primary-color: #004c99; /* Deep Blue, like Argentina/Barca */
+    --secondary-color: #ffde00; /* Gold/Yellow, for accents */
+    --text-color: #333;
+    --light-text-color: #f0f0f0;
+    --background-color: #ffffff;
+    --dark-background: #1a1a1a;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+/* Global Reset and Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Header and Navigation */
+.header {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark header */
+    color: var(--light-text-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--light-text-color);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section (Key Visual) */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text-color);
+    /* Placeholder for a strong visual background */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('placeholder-messi-image.jpg') center center/cover no-repeat;
+    /* In a real project, replace 'placeholder-messi-image.jpg' with an actual high-quality image */
+}
+
+.hero-content {
+    z-index: 1;
+    padding-top: 50px; /* Offset for fixed header */
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--secondary-color);
+    color: var(--dark-background);
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffd200;
+    transform: translateY(-3px);
+}
+
+/* General Sections */
+.section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--background-color);
+}
+
+.about-content {
+    column-count: 2;
+    column-gap: 40px;
+    font-size: 1.1rem;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: var(--dark-background);
+    color: var(--light-text-color);
+}
+
+.stats-section .section-title {
+    color: var(--secondary-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.stat-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: #f4f4f4;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 300px;
+    background-color: #ccc; /* Placeholder color */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--light-text-color);
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Example background image placeholders for visual effect */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), #888;
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-background);
+    color: var(--light-text-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--light-text-color);
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-content {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .hero-title {
+        font-size: 3rem;
+    }
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer .container {
+        flex-direction: column;
+    }
+    .social-links {
+        margin-top: 15px;
+    }
+}

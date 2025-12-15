@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lionel Messi - Huyền Thoại Bóng Đá</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920') center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem 0;
+            position: sticky;
+            top: 120px;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            border-radius: 2px;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-card h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #ffd700;
+            padding-left: 1rem;
+        }
+
+        .content-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            border-left: 5px solid #ffd700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #ffd700;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        /* Achievements Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border-top: 4px solid #ffd700;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h4 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .achievement-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .achievement-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Records Section */
+        .records-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .record-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid #ffd700;
+        }
+
+        .record-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .record-description {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: rotate(2deg) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            .achievements-grid,
+            .records-list,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>⚽ Lionel Messi ⚽</h1>
+            <p>Huyền Thoại Bóng Đá Thế Giới</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#tuoi-tho">Tuổi Thơ</a></li>
+                <li><a href="#su-nghiep">Sự Nghiệp</a></li>
+                <li><a href="#phong-cach">Phong Cách</a></li>
+                <li><a href="#thanh-tich">Thành Tích</a></li>
+                <li><a href="#ky-luc">Kỷ Lục</a></li>
+                <li><a href="#anh-huong">Ảnh Hưởng</a></li>
+                <li><a href="#gia-tri">Giá Trị</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Lionel Andrés Messi</h2>
+            <p>"Tài năng không đủ, bạn cần phải làm việc chăm chỉ. Và đó là điều tôi đã làm."</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Tuổi Thơ -->
+        <section id="tuoi-tho" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Tuổi Thơ Và Khởi Đầu</h2>
+                <div class="content-card">
+                    <h3>Những Ngày Đầu Ở Rosario</h3>
+                    <p>
+                        Lionel Andrés Messi Cuccittini sinh ngày 24 tháng 6 năm 1987 tại Rosario, Argentina, trong một gia đình 
+                        khiêm tốn. Từ khi còn rất nhỏ, Messi đã thể hiện niềm đam mê mãnh liệt với trái bóng. Anh bắt đầu chơi bóng 
+                        từ năm 5 tuổi tại câu lạc bộ địa phương Grandoli, nơi cha anh, Jorge Messi, làm huấn luyện viên.
+                    </p>
+                    <p>
+                        Tuy nhiên, cuộc sống của cậu bé Messi không hề dễ dàng. Ở tuổi 11, anh được chẩn đoán mắc bệnh thiếu hụt 
+                        hormone tăng trưởng (GHD), một căn bệnh khiến cơ thể không thể phát triển bình thường. Chi phí điều trị 
+                        rất cao - khoảng 900 USD mỗi tháng - một số tiền mà gia đình Messi khó có thể chi trả.
+                    </p>
+                    <p>
+                        Mặc dù vậy, tài năng của Messi đã được phát hiện sớm. Năm 2000, khi chỉ mới 13 tuổi, Messi đã có cơ hội 
+                        thử việc tại FC Barcelona. Câu lạc bộ Tây Ban Nha đã bị ấn tượng bởi tài năng của cậu bé và quyết định 
+                        chi trả toàn bộ chi phí điều trị bệnh, đồng thời đưa gia đình Messi sang Tây Ban Nha. Đây là bước ngoặt 
+                        quan trọng đầu tiên trong sự nghiệp của Messi.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Con Đường Chuyên Nghiệp -->
+        <section id="su-nghiep" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Con Đường Trở Thành Cầu Thủ Chuyên Nghiệp</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2000-2003</div>
+                        <div class="timeline-title">La Masia - Học Viện Bóng Đá Barcelona</div>
+                        <p>
+                            Messi gia nhập học viện La Masia của Barcelona năm 2000. Tại đây, anh được đào tạo theo triết lý 
+                            tiki-taka nổi tiếng của Barcelona, phát triển kỹ thuật cá nhân, khả năng kiểm soát bóng và tầm nhìn 
+                            chiến thuật. Messi nhanh chóng nổi bật trong các đội trẻ, ghi bàn và kiến tạo với tần suất đáng kinh ngạc.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2003-2004</div>
+                        <div class="timeline-title">Ra Mắt Đội Một</div>
+                        <p>
+                            Ngày 16 tháng 11 năm 2003, ở tuổi 16, Messi ra mắt đội một Barcelona trong trận giao hữu với Porto. 
+                            Anh trở thành cầu thủ trẻ thứ ba trong lịch sử Barcelona chơi cho đội một. Mùa giải 2004-2005, Messi 
+                            chính thức ký hợp đồng chuyên nghiệp đầu tiên với Barcelona.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-year">2005</div>
+                        <div class="timeline-title">Bàn Thắng Đầu Tiên</div>
+                        <p>
+                            Ngày 1 tháng 5 năm 2005, Messi ghi bàn thắng đầu tiên cho Barcelona ở tuổi 17, 10 tháng và 7 ngày, 
+                            trở thành cầu thủ trẻ nhất ghi bàn cho câu lạc bộ tại thời điểm đó. Bàn thắng này mở ra một kỷ nguyên 
+                            mới cho cả Messi và Barcelona.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phong Cách Thi Đấu -->
+        <section id="phong-cach" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Phong Cách Thi Đấu Độc Đáo</h2>
+                <div class="content-card">
+                    <h3>Kỹ Thuật Cá Nhân Xuất Chúng</h3>
+                    <p>
+                        Messi sở hữu một phong cách thi đấu hoàn toàn độc đáo, kết hợp giữa tốc độ, kỹ thuật và trí tuệ. Với chiều 
+                        cao khiêm tốn (1.70m), Messi đã biến điểm yếu thành thế mạnh. Trọng tâm thấp giúp anh có khả năng giữ thăng 
+                        bằng tuyệt vời và thay đổi hướng di chuyển một cách nhanh chóng, khó lường.
+                    </p>
+                    <p>
+                        <strong>Khả năng rê bóng:</strong> Messi được coi là một trong những cầu thủ rê bóng xuất sắc nhất mọi thời đại. 
+                        Anh có khả năng điều khiển bóng ở cự ly gần, với những cú chạm bóng tinh tế và tốc độ tăng tốc đột ngột. 
+                        Kỹ thuật "La Pulga" (Con Bọ Chét) của anh khiến các hậu vệ phải đau đầu.
+                    </p>
+                    <p>
+                        <strong>Chuyền bóng và tầm nhìn:</strong> Không chỉ là một tiền đạo ghi bàn, Messi còn là một kiến tạo viên 
+                        xuất sắc. Anh có khả năng nhìn thấy những đường chuyền mà người khác không thể, với độ chính xác cao và 
+                        thời điểm hoàn hảo.
+                    </p>
+                    <p>
+                        <strong>Khả năng ghi bàn:</strong> Messi có thể ghi bàn bằng cả hai chân, bằng đầu, và đặc biệt là những cú 
+                        sút xa đầy uy lực. Anh cũng là một chuyên gia đá phạt đền và phạt góc, với tỷ lệ thành công rất cao.
+                    </p>
+                    <p>
+                        <strong>Trí tuệ chiến thuật:</strong> Messi không chỉ dựa vào tốc độ hay sức mạnh, mà còn dựa vào trí tuệ. 
+                        Anh hiểu rõ trò chơi, biết khi nào nên tấn công, khi nào nên chuyền, và luôn tìm cách tạo ra không gian 
+                        cho đồng đội.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Các Cột Mốc Quan Trọng -->
+        <section id="cot-moc" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Các Cột Mốc Quan Trọng Trong Sự Nghiệp</h2>
+
+                <div class="content-card">
+                    <h3>🏆 FC Barcelona (2004-2021)</h3>
+                    <p>
+                        <strong>2008-2009 - Mùa giải đầu tiên của Guardiola:</strong> Dưới sự dẫn dắt của Pep Guardiola, Messi và 
+                        Barcelona đạt được cú ăn ba lịch sử (La Liga, Copa del Rey, Champions League). Messi ghi 38 bàn trong 
+                        mùa giải này và giành Quả Bóng Vàng đầu tiên.
+                    </p>
+                    <p>
+                        <strong>2011-2012 - Mùa giải kỷ lục:</strong> Messi ghi 73 bàn trong một mùa giải, phá vỡ kỷ lục 67 bàn 
+                        của Gerd Müller. Anh cũng ghi 50 bàn tại La Liga, một kỷ lục vẫn còn tồn tại đến ngày nay.
+                    </p>
+                    <p>
+                        <strong>2014-2015 - Cú Ăn Ba Lần Hai:</strong> Messi cùng Barcelona giành lại cú ăn ba, với anh là người 
+                        ghi bàn và kiến tạo hàng đầu. Đây là mùa giải chứng minh sự trưởng thành của Messi như một người lãnh đạo 
+                        trên sân cỏ.
+                    </p>
+                    <p>
+                        <strong>2019 - Quả Bóng Vàng thứ 6:</strong> Messi giành Quả Bóng Vàng lần thứ 6, vượt qua Cristiano Ronaldo 
+                        để trở thành cầu thủ giành nhiều Quả Bóng Vàng nhất lịch sử.
+                    </p>
+                    <p>
+                        <strong>2021 - Rời Barcelona:</strong> Do vấn đề tài chính của câu lạc bộ, Messi buộc phải rời Barcelona 
+                        sau 21 năm gắn bó. Đây là một cú sốc lớn đối với người hâm mộ bóng đá toàn cầu.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🇫🇷 Paris Saint-Germain (2021-2023)</h3>
+                    <p>
+                        <strong>2021-2022:</strong> Messi gia nhập PSG với kỳ vọng lớn. Mặc dù gặp khó khăn ban đầu trong việc thích 
+                        nghi với Ligue 1, anh vẫn ghi 11 bàn và có 15 pha kiến tạo trong mùa giải đầu tiên. PSG giành chức vô địch 
+                        Ligue 1.
+                    </p>
+                    <p>
+                        <strong>2022-2023:</strong> Messi có mùa giải tốt hơn với 21 bàn thắng và 20 pha kiến tạo. Anh giúp PSG 
+                        bảo vệ chức vô địch Ligue 1 và đạt được nhiều kỷ lục cá nhân. Đây cũng là mùa giải anh giành World Cup 
+                        2022 với Argentina.
+                    </p>
+                    <p>
+                        <strong>2023:</strong> Sau khi hoàn thành mục tiêu lớn nhất là giành World Cup, Messi quyết định rời PSG 
+                        để tìm kiếm một thử thách mới.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🇦🇷 Đội Tuyển Argentina</h3>
+                    <p>
+                        <strong>2005-2014 - Những Năm Tháng Khó Khăn:</strong> Mặc dù Messi đã có nhiều thành công ở cấp độ câu lạc 
+                        bộ, nhưng với đội tuyển quốc gia, anh phải chờ đợi rất lâu. Argentina thua trong các trận chung kết World 
+                        Cup 2014 và Copa América 2015, 2016.
+                    </p>
+                    <p>
+                        <strong>2021 - Copa América Đầu Tiên:</strong> Sau 28 năm chờ đợi, Argentina cuối cùng cũng giành danh hiệu 
+                        quốc tế đầu tiên dưới thời Messi. Anh là cầu thủ xuất sắc nhất giải đấu với 4 bàn thắng và 5 pha kiến tạo.
+                    </p>
+                    <p>
+                        <strong>2022 - World Cup - Giấc Mơ Cuối Cùng:</strong> Tại World Cup 2022 ở Qatar, Messi cuối cùng cũng 
+                        đạt được mục tiêu lớn nhất của sự nghiệp. Anh dẫn dắt Argentina đến chức vô địch, ghi 7 bàn (bao gồm 2 bàn 
+                        trong trận chung kết), và giành Quả Bóng Vàng World Cup. Đây là khoảnh khắc hoàn thiện sự nghiệp của một 
+                        huyền thoại.
+                    </p>
+                    <p>
+                        <strong>2024 - Copa América Lần Thứ Hai:</strong> Messi tiếp tục dẫn dắt Argentina giành Copa América 2024, 
+                        khẳng định vị thế của đội tuyển và của chính anh trong làng bóng đá thế giới.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thành Tích -->
+        <section id="thanh-tich" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Danh Hiệu Cá Nhân Và Tập Thể</h2>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h4>Danh Hiệu Cá Nhân</h4>
+                        <ul>
+                            <li>8x Quả Bóng Vàng (2009, 2010, 2011, 2012, 2015, 2019, 2021, 2023)</li>
+                            <li>8x Cầu thủ xuất sắc nhất năm của FIFA</li>
+                            <li>6x Chiếc Giày Vàng châu Âu</li>
+                            <li>2x Cầu thủ xuất sắc nhất World Cup</li>
+                            <li>Quả Bóng Vàng World Cup 2022</li>
+                            <li>Nhiều giải thưởng La Liga, Champions League</li>
+                        </ul>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">👑</div>
+                        <h4>Danh Hiệu Tập Thể - Barcelona</h4>
+                        <ul>
+                            <li>10x La Liga (2004-05, 2005-06, 2008-09, 2009-10, 2010-11, 2012-13, 2014-15, 2015-16, 2017-18, 2018-19)</li>
+                            <li>7x Copa del Rey</li>
+                            <li>8x Supercopa de España</li>
+                            <li>4x UEFA Champions League (2005-06, 2008-09, 2010-11, 2014-15)</li>
+                            <li>3x UEFA Super Cup</li>
+                            <li>3x FIFA Club World Cup</li>
+                        </ul>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⭐</div>
+                        <h4>Danh Hiệu Tập Thể - PSG</h4>
+                        <ul>
+                            <li>2x Ligue 1 (2021-22, 2022-23)</li>
+                            <li>1x Trophée des Champions</li>
+                        </ul>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🇦🇷</div>
+                        <h4>Danh Hiệu Tập Thể - Argentina</h4>
+                        <ul>
+                            <li>1x FIFA World Cup (2022)</li>
+                            <li>2x Copa América (2021, 2024)</li>
+                            <li>1x Finalissima (2022)</li>
+                            <li>1x Huy chương vàng Olympic (2008)</li>
+                            <li>1x FIFA U-20 World Cup (2005)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kỷ Lục -->
+        <section id="ky-luc" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Những Kỷ Lục Vượt Thời Gian</h2>
+                
+                <div class="records-list">
+                    <div class="record-item">
+                        <div class="record-number">821</div>
+                        <div class="record-description">Bàn thắng trong sự nghiệp (tất cả giải đấu)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">474</div>
+                        <div class="record-description">Bàn thắng tại La Liga (kỷ lục vĩnh viễn)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">120</div>
+                        <div class="record-description">Bàn thắng tại Champions League</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">50</div>
+                        <div class="record-description">Bàn thắng trong một mùa giải La Liga (2011-12)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">91</div>
+                        <div class="record-description">Bàn thắng trong một năm dương lịch (2012)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">26</div>
+                        <div class="record-description">Bàn thắng El Clásico (kỷ lục)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">8</div>
+                        <div class="record-description">Quả Bóng Vàng (kỷ lục tuyệt đối)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">6</div>
+                        <div class="record-description">Chiếc Giày Vàng châu Âu</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">35</div>
+                        <div class="record-description">Danh hiệu với Barcelona (kỷ lục)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">180</div>
+                        <div class="record-description">Pha kiến tạo tại La Liga</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">13</div>
+                        <div class="record-description">Bàn thắng tại World Cup (kỷ lục Argentina)</div>
+                    </div>
+                    <div class="record-item">
+                        <div class="record-number">26</div>
+                        <div class="record-description">Năm thi đấu chuyên nghiệp</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ảnh Hưởng -->
+        <section id="anh-huong" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Ảnh Hưởng Đối Với Bóng Đá Thế Giới</h2>
+                <div class="content-card">
+                    <h3>Thay Đổi Cách Chơi Bóng</h3>
+                    <p>
+                        Messi đã cách mạng hóa vị trí tiền đạo trong bóng đá hiện đại. Không còn là một tiền đạo truyền thống chỉ 
+                        đứng trong vòng cấm, Messi là một "false 9" (số 9 giả), một tiền đạo lùi sâu, có thể chơi ở nhiều vị trí 
+                        khác nhau trên sân. Phong cách này đã ảnh hưởng đến cách các đội bóng thiết kế chiến thuật và cách các cầu 
+                        thủ trẻ học hỏi.
+                    </p>
+                    <p>
+                        <strong>Ảnh hưởng đến thế hệ trẻ:</strong> Hàng triệu trẻ em trên khắp thế giới đã xem Messi chơi bóng và 
+                        cố gắng bắt chước phong cách của anh. Từ những cú rê bóng, những đường chuyền, đến cách anh di chuyển không 
+                        bóng - tất cả đều trở thành bài học cho thế hệ sau.
+                    </p>
+                    <p>
+                        <strong>Văn hóa bóng đá:</strong> Messi đã góp phần làm cho bóng đá trở nên nghệ thuật hơn. Anh chứng minh 
+                        rằng bạn không cần phải cao lớn hay mạnh mẽ để trở thành cầu thủ xuất sắc nhất thế giới. Điều quan trọng là 
+                        kỹ thuật, trí tuệ và đam mê.
+                    </p>
+                    <p>
+                        <strong>Kinh tế bóng đá:</strong> Sự hiện diện của Messi đã làm tăng giá trị thương mại của các câu lạc bộ 
+                        và giải đấu. Doanh thu từ vé, áo đấu, và các hợp đồng truyền hình đều tăng lên đáng kể khi có Messi.
+                    </p>
+                    <p>
+                        <strong>Di sản văn hóa:</strong> Messi không chỉ là một cầu thủ bóng đá, mà còn là một biểu tượng văn hóa. 
+                        Anh đại diện cho sự kiên trì, khiêm tốn, và tài năng. Câu chuyện của anh - từ một cậu bé bị bệnh đến huyền 
+                        thoại bóng đá - đã truyền cảm hứng cho hàng triệu người.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Giá Trị Và Cá Tính -->
+        <section id="gia-tri" class="scroll-reveal">
+            <div class="container">
+                <h2 class="section-title">Giá Trị Và Cá Tính - Điều Tạo Nên Huyền Thoại</h2>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">💪</div>
+                        <h4>Kiên Trì Và Vượt Qua Khó Khăn</h4>
+                        <p>
+                            Từ việc đối mặt với căn bệnh thiếu hụt hormone tăng trưởng đến những thất bại trên sân cỏ, Messi luôn 
+                            kiên trì và không bao giờ từ bỏ. Anh chứng minh rằng nghị lực và quyết tâm có thể vượt qua mọi trở ngại.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🙏</div>
+                        <h4>Khiêm Tốn Và Tôn Trọng</h4>
+                        <p>
+                            Dù là cầu thủ xuất sắc nhất thế giới, Messi luôn giữ thái độ khiêm tốn. Anh tôn trọng đối thủ, đồng đội, 
+                            và người hâm mộ. Sự khiêm tốn này khiến anh được yêu mến không chỉ vì tài năng mà còn vì nhân cách.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">👨‍👩‍👦</div>
+                        <h4>Gia Đình Là Trên Hết</h4>
+                        <p>
+                            Messi luôn đặt gia đình lên hàng đầu. Anh là một người chồng, người cha mẫu mực. Gia đình là nguồn động 
+                            lực và sức mạnh giúp anh vượt qua mọi thử thách trong sự nghiệp.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h4>Đam Mê Và Cống Hiến</h4>
+                        <p>
+                            Messi chơi bóng không chỉ vì tiền bạc hay danh tiếng, mà vì đam mê thực sự. Anh dành cả cuộc đời cho 
+                            bóng đá, luôn cố gắng cải thiện và không bao giờ hài lòng với những gì đã đạt được.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h4>Tinh Thần Đồng Đội</h4>
+                        <p>
+                            Mặc dù có thể tự mình quyết định trận đấu, Messi luôn ưu tiên đội bóng. Anh sẵn sàng chuyền bóng cho 
+                            đồng đội khi họ ở vị trí tốt hơn, chứng minh rằng thành công tập thể quan trọng hơn thành tích cá nhân.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🌟</div>
+                        <h4>Lãnh Đạo Thầm Lặng</h4>
+                        <p>
+                            Messi không phải là kiểu đội trưởng ồn ào, nhưng anh lãnh đạo bằng hành động. Khi đội bóng gặp khó khăn, 
+                            anh là người đứng ra gánh vác trách nhiệm và dẫn dắt đồng đội vượt qua thử thách.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-card" style="margin-top: 3rem;">
+                    <h3>Di Sản Vĩnh Cửu</h3>
+                    <p>
+                        Lionel Messi không chỉ là một cầu thủ bóng đá xuất sắc, mà còn là một huyền thoại đã để lại dấu ấn không 
+                        thể phai mờ trong lịch sử bóng đá. Với 8 Quả Bóng Vàng, hàng trăm danh hiệu, và vô số kỷ lục, Messi đã 
+                        chứng minh rằng mình xứng đáng được coi là một trong những cầu thủ vĩ đại nhất mọi thời đại.
+                    </p>
+                    <p>
+                        Nhưng điều làm nên huyền thoại Messi không chỉ là những con số hay danh hiệu. Đó là cách anh chơi bóng 
+                        với niềm đam mê thuần khiết, là sự khiêm tốn và tôn trọng mà anh dành cho mọi người, là nghị lực vượt qua 
+                        mọi khó khăn, và là tình yêu bất diệt với trái bóng tròn.
+                    </p>
+                    <p>
+                        Khi các thế hệ tương lai nhìn lại lịch sử bóng đá, họ sẽ nhớ đến Messi không chỉ như một cầu thủ ghi nhiều 
+                        bàn thắng nhất, hay giành nhiều danh hiệu nhất, mà như một người đã làm cho bóng đá trở nên đẹp hơn, nghệ 
+                        thuật hơn, và đầy cảm hứng hơn. Đó chính là di sản vĩnh cửu mà Lionel Messi để lại cho thế giới.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 - Trang Web Tribute về Lionel Messi</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">"Tôi không nghĩ mình là ngôi sao. Tôi chỉ là một cầu thủ bóng đá." - Lionel Messi</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
